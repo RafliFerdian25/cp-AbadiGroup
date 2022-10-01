@@ -16,9 +16,9 @@ class GalleryController extends Controller
     {
         $data = [
             "title" => "Gallery",
-            "galleries" =>  Gallery::all()
+            "galleries" =>  Gallery::get()
         ];
-        dd($data);
+        var_dump($data);
         return view("gallery", $data);
     }
 

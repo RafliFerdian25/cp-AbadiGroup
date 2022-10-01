@@ -1,6 +1,11 @@
 <?php
 
+use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,4 +22,21 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+
+// Routes admin
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth');
+Route::get('/admin/edit-profile', [ProfileController::class, 'edit'])->middleware('auth');
+Route::put('/admin/edit-profile/{profile:id}', [ProfileController::class, 'update'])->middleware('auth');
+
+// routes navigasi user
 Route::get('/', [ProfileController::class, 'index']);
+Route::get('/service', [ServiceController::class, 'index']);
+Route::get('/product', [ProductController::class, 'index']);
+Route::get('/news', [NewsController::class, 'index']);
+
+
+Route::get('/gallery', [GalleryController::class, 'index']);
+Route::get('/profile', [ProfileController::class, 'index']);
+Route::get('/testimonial', [ProfileController::class, 'index']);

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -14,6 +15,12 @@ class ProductController extends Controller
     public function index()
     {
         //
+        $data = [
+            "title" => "produk",
+            "products" => Product::with('PhotoProduct')->get(),
+        ];
+        dd($data);
+        return view("layanan", $data);
     }
 
     /**

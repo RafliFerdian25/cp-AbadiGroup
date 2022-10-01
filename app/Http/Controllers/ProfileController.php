@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Gallery;
 use Illuminate\Http\Request;
 
 use App\Models\Profile;
+use App\Models\Service;
 
 class ProfileController extends Controller
 {
@@ -16,8 +18,10 @@ class ProfileController extends Controller
     public function index()
     {
         $data = [
-            "title" => "Profile",
-            "profile" =>  Profile::all()
+            "title" => "Beranda",
+            "profile" =>  Profile::first(),
+            "services" => Service::all(),
+            "galleries" =>  Gallery::limit(5)->with('news')->get(),
         ];
         dd($data);
         return view("profile", $data);
@@ -61,9 +65,15 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
         //
+        $data = [
+            "title" => "Admin - Edit Profile",
+            "profile" =>  Profile::first(),
+        ];
+        // dd($data);
+        return view("admin.edit-profile", $data);
     }
 
     /**
@@ -73,9 +83,24 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Profile $profile)
     {
         //
+        $validated = $request->validate([
+            'overview' => 'required',
+            'vision' => 'required',
+            'mission' => 'required',
+            'history' => 'required',
+            'address' => 'required',
+            'latitude' => 'required',
+            'longitude' => 'required',
+            'phone_number' => 'required',
+            'email' => 'required',
+        ]);
+
+        Profile::where('id', $profile->id)->update($validated);
+
+        return redirect('/admin/edit-profile')->with('success', 'Profile updated successfully');
     }
 
     /**

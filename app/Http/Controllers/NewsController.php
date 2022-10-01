@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\News;
 use Illuminate\Http\Request;
 
 class NewsController extends Controller
@@ -14,6 +15,12 @@ class NewsController extends Controller
     public function index()
     {
         //
+        $data = [
+            "title" => "Berita",
+            "news" => News::with('gallery')->get(),
+        ];
+        dd($data);
+        return view("berita", $data);
     }
 
     /**

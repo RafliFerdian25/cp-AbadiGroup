@@ -12,7 +12,7 @@ class Product extends Model
     protected $guarded = ['id'];
 
     // relation one to many with photo_products
-    public function photo_product(){
+    public function PhotoProduct(){
         return $this->hasMany(PhotoProduct::class);
     }
 

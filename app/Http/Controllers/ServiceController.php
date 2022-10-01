@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
+use App\Models\Service;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
 class ServiceController extends Controller
@@ -13,7 +16,14 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        //
+        $data = [
+            "title" => "Layanan",
+            "services" => Service::with('gallery')->get(),
+            "testimonial" => Testimonial::limit(5)->orderByDesc('updated_at')->get(),
+            "products" => Product::with('photoProduct')->get(),
+        ];
+        dd($data);
+        return view("layanan", $data);
     }
 
     /**
