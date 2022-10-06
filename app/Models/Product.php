@@ -10,6 +10,7 @@ class Product extends Model
     use HasFactory;
     
     protected $guarded = ['id'];
+    protected $with = ['category'];
 
     // relation one to many with photo_products
     public function PhotoProduct(){

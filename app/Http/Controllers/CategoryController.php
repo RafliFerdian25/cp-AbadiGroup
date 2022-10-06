@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -14,6 +15,12 @@ class CategoryController extends Controller
     public function index()
     {
         //
+        $data = [
+            "title" => "Admin - Category",
+            "categories" =>  Category::all(),
+        ];
+        // dd($data);
+        return view("admin.category", $data);
     }
 
     /**
@@ -24,6 +31,7 @@ class CategoryController extends Controller
     public function create()
     {
         //
+        return view("admin.category-create");
     }
 
     /**
@@ -35,6 +43,13 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         //
+        $validated = $request->validate([
+            'name' => 'required',
+        ]);
+
+        Category::create($validated);
+
+        return redirect('/admin/category')->with('create', 'Category created successfully');
     }
 
     /**
@@ -46,6 +61,7 @@ class CategoryController extends Controller
     public function show($id)
     {
         //
+        
     }
 
     /**
@@ -57,6 +73,12 @@ class CategoryController extends Controller
     public function edit($id)
     {
         //
+        $data = [
+            "title" => "Admin - Edit category",
+            "category" =>  Category::find($id),
+        ];
+        // dd($data);
+        return view("admin.category-edit", $data);
     }
 
     /**
@@ -69,6 +91,13 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $validated = $request->validate([
+            'name' => 'required',
+        ]);
+
+        Category::where('id', $id)->update($validated);
+
+        return redirect('/admin/category')->with('success', 'Profile updated successfully');
     }
 
     /**
@@ -80,5 +109,8 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         //
+        Category::destroy($id);
+
+        return redirect('/admin/category')->with('destroy', 'Category created successfully');
     }
 }

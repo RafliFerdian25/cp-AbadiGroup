@@ -73,7 +73,7 @@ class ProfileController extends Controller
             "profile" =>  Profile::first(),
         ];
         // dd($data);
-        return view("admin.edit-profile", $data);
+        return view("admin.profile-edit", $data);
     }
 
     /**

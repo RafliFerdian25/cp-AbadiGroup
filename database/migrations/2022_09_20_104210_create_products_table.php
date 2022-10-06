@@ -15,17 +15,16 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 100)->nullable();
-            $table->text('description')->nullable();
-            $table->integer('price')->nullable();
-            $table->float('length');
-            $table->float('breadth');
-            $table->float('depth');
-            $table->float('speed');
-            $table->integer('main_engine');
-            $table->float('number_of_engine');
-            $table->unsignedBigInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('categories');
+            $table->string('name', 100);
+            $table->text('description');
+            $table->integer('price');
+            $table->float('length')->nullable();
+            $table->float('breadth')->nullable();
+            $table->float('depth')->nullable();
+            $table->float('speed')->nullable();
+            $table->integer('main_engine')->nullable();
+            $table->float('number_of_engine')->nullable();
+            $table->foreignId('category_id')->nullable()->constrained()->cascadeOnUpdate()->nullOnDelete();
             $table->timestamps();
         });
     }

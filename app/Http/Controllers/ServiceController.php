@@ -16,14 +16,19 @@ class ServiceController extends Controller
      */
     public function index()
     {
+        // $data = [
+        //     "title" => "Layanan",
+        //     "services" => Service::with('gallery')->get(),
+        //     "testimonial" => Testimonial::limit(5)->orderByDesc('updated_at')->get(),
+        //     "products" => Product::with('photoProduct')->get(),
+        // ];
+        // return view("layanan", $data);
         $data = [
-            "title" => "Layanan",
-            "services" => Service::with('gallery')->get(),
-            "testimonial" => Testimonial::limit(5)->orderByDesc('updated_at')->get(),
-            "products" => Product::with('photoProduct')->get(),
+            "title" => "Admin - Service",
+            "services" =>  Service::all(),
         ];
-        dd($data);
-        return view("layanan", $data);
+        // dd($data);
+        return view("admin.service", $data);
     }
 
     /**
@@ -67,6 +72,12 @@ class ServiceController extends Controller
     public function edit($id)
     {
         //
+        $data = [
+            "title" => "Admin - Edit Service",
+            "service" =>  Service::find($id),
+        ];
+        // dd($data);
+        return view("admin.service-edit", $data);
     }
 
     /**
@@ -79,6 +90,14 @@ class ServiceController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $validated = $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+        ]);
+
+        Service::where('id', $id)->update($validated);
+
+        return redirect('/admin/service')->with('success', 'Profile updated successfully');
     }
 
     /**

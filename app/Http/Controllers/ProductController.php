@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -17,10 +18,9 @@ class ProductController extends Controller
         //
         $data = [
             "title" => "produk",
-            "products" => Product::with('PhotoProduct')->get(),
+            "products" => Product::get(),
         ];
-        dd($data);
-        return view("layanan", $data);
+        return view("admin.product", $data);
     }
 
     /**
@@ -31,6 +31,11 @@ class ProductController extends Controller
     public function create()
     {
         //
+        $data = [
+            "title" => "Admin - Add Product",
+            "categories" => Category::all(),
+        ];
+        return view("admin.product-create", $data);
     }
 
     /**
@@ -42,6 +47,22 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         //
+        $validated = $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+            'length' => 'required',
+            'breadth' => 'required',
+            'depth' => 'required',
+            'speed' => 'required',
+            'main_engine' => 'required',
+            'number_of_engine' => 'required',
+            'category_id' => 'required',
+        ]);
+
+        Product::create($validated);
+
+        return redirect('/admin/product')->with('create', 'Category created successfully');
     }
 
     /**
@@ -87,5 +108,8 @@ class ProductController extends Controller
     public function destroy($id)
     {
         //
+        Product::destroy($id);
+
+        return redirect('/admin/product')->with('destroy', 'Product created successfully');
     }
 }
