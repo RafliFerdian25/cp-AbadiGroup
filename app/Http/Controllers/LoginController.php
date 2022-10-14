@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -9,9 +10,17 @@ class LoginController extends Controller
 {
     public function index()
     {
-        return view('login.index', [
-            'title' => 'Login'
-        ]);
+        // consume api
+        $client = new Client();
+        $response = $client->request('GET', 'https://api.unsplash.com/photos/-Gd4GjhtC4k?client_id=ONn33KfToo7Y-sU9vO899uGYnepYhHCReKOczup3IiU&collections=market');
+        $response = $response->getBody()->getContents();
+        $response = json_decode($response);
+        // dd($response->urls);
+        $data = [
+            "title" => "Login",
+            "image" => $response->urls,
+        ];
+        return view('login.index', $data);
     }
 
     /**

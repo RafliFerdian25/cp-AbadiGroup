@@ -14,7 +14,7 @@
             <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Edit Category</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Edit Kategori</h6>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
@@ -22,7 +22,7 @@
                         @method('put')
                         @csrf
                         <div class="row mb-3">
-                            <label for="name" class="col-sm-2 col-form-label">Name</label>
+                            <label for="name" class="col-sm-2 col-form-label">Nama</label>
                             <div class="col-sm-10">
                                 <input required type="text" class="form-control @error('name')
                                     is-invalid
@@ -34,7 +34,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Update category</button>
+                        <button type="submit" class="btn btn-primary">Memperbarui Kategori</button>
                     </form>
                 </div>
             </div>

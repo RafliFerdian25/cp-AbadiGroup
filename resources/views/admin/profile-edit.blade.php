@@ -14,7 +14,7 @@
             <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Edit Profile</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Edit Profil</h6>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
@@ -22,7 +22,7 @@
                         @method('put')
                         @csrf
                         <div class="row mb-3">
-                            <label for="overview" class="col-sm-2 col-form-label">overview</label>
+                            <label for="overview" class="col-sm-2 col-form-label">Gambaran umum</label>
                             <div class="col-sm-10">
                                 <textarea required type="text" class="form-control @error('overview')
                                     is-invalid
@@ -35,7 +35,7 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="vision" class="col-sm-2 col-form-label">vision</label>
+                            <label for="vision" class="col-sm-2 col-form-label">Visi</label>
                             <div class="col-sm-10">
                                 <textarea required name="vision" type="text" class="form-control @error('vision')
                                     is-invalid
@@ -48,7 +48,7 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="mission" class="col-sm-2 col-form-label">mission</label>
+                            <label for="mission" class="col-sm-2 col-form-label">Misi</label>
                             <div class="col-sm-10">
                                 <textarea required name="mission" type="text" class="form-control @error('mission')
                                     is-invalid
@@ -61,7 +61,7 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="history" class="col-sm-2 col-form-label">history</label>
+                            <label for="history" class="col-sm-2 col-form-label">Sejarah</label>
                             <div class="col-sm-10">
                                 <textarea required name="history" type="text" class="form-control @error('history')
                                     is-invalid
@@ -74,7 +74,7 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="address" class="col-sm-2 col-form-label">address</label>
+                            <label for="address" class="col-sm-2 col-form-label">Alamat</label>
                             <div class="col-sm-10">
                                 <textarea required name="address" type="text" class="form-control @error('address')
                                     is-invalid
@@ -87,7 +87,7 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="latitude" class="col-sm-2 col-form-label">latitude</label>
+                            <label for="latitude" class="col-sm-2 col-form-label">Garis Lintang</label>
                             <div class="col-sm-10">
                                 <input required type="text" class="form-control @error('latitude')
                                     is-invalid
@@ -100,7 +100,7 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="longitude" class="col-sm-2 col-form-label">longitude</label>
+                            <label for="longitude" class="col-sm-2 col-form-label">Garis Bujur</label>
                             <div class="col-sm-10">
                                 <input required type="text" class="form-control @error('longitude')
                                     is-invalid
@@ -113,7 +113,7 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="phone_number" class="col-sm-2 col-form-label">Phone Number</label>
+                            <label for="phone_number" class="col-sm-2 col-form-label">No Telepon</label>
                             <div class="col-sm-10">
                                 <input required type="text" class="form-control @error('phone_number')
                                     is-invalid
@@ -126,7 +126,7 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="email" class="col-sm-2 col-form-label">Email</label>
+                            <label for="email" class="col-sm-2 col-form-label">Alamat Email</label>
                             <div class="col-sm-10">
                                 <input required type="email" class="form-control @error('email')
                                     is-invalid
@@ -138,7 +138,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Update Profile</button>
+                        <button type="submit" class="btn btn-primary">Ubah Profil</button>
                     </form>
                 </div>
             </div>

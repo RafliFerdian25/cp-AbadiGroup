@@ -28,11 +28,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth');
-Route::get('/admin/profile/edit', [ProfileController::class, 'edit'])->middleware('auth');
+Route::get('/admin/profile', [ProfileController::class, 'edit'])->middleware('auth');
 Route::put('/admin/profile/{profile:id}', [ProfileController::class, 'update'])->middleware('auth');
 Route::resource('/admin/service', ServiceController::class)->middleware('auth');
 Route::resource('/admin/category', CategoryController::class)->middleware('auth');
 Route::resource('/admin/product', ProductController::class)->middleware('auth');
+Route::resource('/admin/news', NewsController::class)->middleware('auth');
 
 // routes navigasi user
 Route::get('/', [ProfileController::class, 'index']);

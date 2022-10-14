@@ -14,14 +14,14 @@
             <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Add Category</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Tambah Kategori</h6>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
                     <form method="POST" action="/admin/category">
                         @csrf
                         <div class="row mb-3">
-                            <label for="name" class="col-sm-2 col-form-label">Name</label>
+                            <label for="name" class="col-sm-2 col-form-label">Nama</label>
                             <div class="col-sm-10">
                                 <input required type="text" autofocus value="{{ old('name') }}" class="form-control @error('name')
                                     is-invalid
@@ -33,7 +33,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Add category</button>
+                        <button type="submit" class="btn btn-primary">Menambah Kategori</button>
                     </form>
                 </div>
             </div>

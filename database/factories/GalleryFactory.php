@@ -21,7 +21,6 @@ class GalleryFactory extends Factory
         return [
             'photo' => fake()->imageUrl(200,200),
             'news_id' => fake()->numberBetween(1, News::count()),
-            'service_id' => fake()->numberBetween(1, Service::count()),
         ];
     }
 }

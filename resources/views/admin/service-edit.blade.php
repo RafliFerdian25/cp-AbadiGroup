@@ -14,15 +14,15 @@
             <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Edit Service</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Edit Layanan</h6>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
-                    <form method="POST" action="/admin/service/{{ $service->id }}">
+                    <form method="POST" action="/admin/service/{{ $service->id }}" enctype="multipart/form-data">
                         @method('put')
                         @csrf
                         <div class="row mb-3">
-                            <label for="name" class="col-sm-2 col-form-label">name</label>
+                            <label for="name" class="col-sm-2 col-form-label">Nama</label>
                             <div class="col-sm-10">
                                 <input required type="text" class="form-control @error('name')
                                     is-invalid
@@ -35,7 +35,7 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="description" class="col-sm-2 col-form-label">description</label>
+                            <label for="description" class="col-sm-2 col-form-label">Deskripsi</label>
                             <div class="col-sm-10">
                                 <textarea required name="description" type="text" class="form-control @error('description')
                                     is-invalid
@@ -47,7 +47,39 @@
                                 @enderror
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Update Service</button>
+                        <div class="row mb-3">
+                            <label for="formFile" class="col-sm-2 col-form-label">Gambar</label>
+                            <div class="col-sm-10 row">
+                                <!-- image di database -->
+                                <?php for ($i = 1; $i <= count($service->gallery); $i++) : ?>
+                                <div class="col-sm-4 mb-3">
+                                    <input class="dropify" type="file" data-max-file-size="8M"
+                                        data-allowed-file-extensions="png jpeg jpg" id="image{{ $i }}"
+                                        name="image{{ $i }}" accept="image/*"
+                                        data-default-file="/storage/{{ $service->gallery[$i - 1]->photo }}">
+                                    @error('image'.$i)
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
+                                </div>
+                                <?php endfor ?>
+                                <!-- tambahan jika image di database belum 5 -->
+                                <?php for ($i; $i <= 5; $i++) : ?>
+                                <div class="col-sm-4 mb-3">
+                                    <input class="dropify" type="file" data-max-file-size="8M"
+                                        data-allowed-file-extensions="png jpeg jpg" id="image{{ $i }}"
+                                        name="image{{ $i }}" accept="image/*">
+                                    @error('image'.$i)
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
+                                </div>
+                                <?php endfor ?>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Memperbarui Layanan</button>
                     </form>
                 </div>
             </div>
@@ -70,6 +102,9 @@ ClassicEditor
     .catch(error => {
         console.error(error);
     });
+
+// dropify
+$('.dropify').dropify();
 </script>
 
 @endsection
