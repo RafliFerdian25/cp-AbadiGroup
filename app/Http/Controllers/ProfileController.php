@@ -23,8 +23,8 @@ class ProfileController extends Controller
             "services" => Service::all(),
             "galleries" =>  Gallery::limit(5)->with('news')->get(),
         ];
-        dd($data);
-        return view("profile", $data);
+        // dd($data);
+        return view("user.index", $data);
     }
 
     /**

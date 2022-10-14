@@ -33,6 +33,23 @@ class ServiceController extends Controller
         return view("admin.service", $data);
     }
 
+    public function userLayanan()
+    {
+        // $data = [
+        //     "title" => "Layanan",
+        //     "services" => Service::with('gallery')->get(),
+        //     "testimonial" => Testimonial::limit(5)->orderByDesc('updated_at')->get(),
+        //     "products" => Product::with('photoProduct')->get(),
+        // ];
+        // return view("layanan", $data);
+        $data = [
+            "title" => "Admin - Service",
+            "services" =>  Service::all(),
+        ];
+        // dd($data);
+        return view("user.layanan", $data);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

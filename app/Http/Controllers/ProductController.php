@@ -25,6 +25,16 @@ class ProductController extends Controller
         return view("admin.product", $data);
     }
 
+    public function userProduk()
+    {
+        //
+        $data = [
+            "title" => "produk",
+            "products" => Product::get(),
+        ];
+        return view("user.produk", $data);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -69,8 +79,8 @@ class ProductController extends Controller
 
 
         $images = [
-                $request->file('image1')->store('assets/product'),
-            ];
+            $request->file('image1')->store('assets/product'),
+        ];
         for (
             $i = 2;
             $i <= 5;
@@ -85,9 +95,9 @@ class ProductController extends Controller
 
         foreach ($images as $image) {
             $photo = [
-                    'photo' => $image,
-                    'product_id' => $product->id
-                ];
+                'photo' => $image,
+                'product_id' => $product->id
+            ];
             PhotoProduct::create($photo);
         }
 
