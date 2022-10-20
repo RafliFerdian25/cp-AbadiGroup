@@ -12,19 +12,22 @@
 
     <div class="card-container mt-3" id="produk">
         <div class="card-content mt-0">
+            @foreach ( $products as $product )
+                
             <div class="card">
                 <div class="card-image">
-                    <img src="img/maintenance.jpg" alt="" />
+                    <img src="{{ asset('storage/'.$product->PhotoProduct[0]->photo) }}" alt="Gambar Kapal" id="gambar1" />
                 </div>
                 <div class="card-info">
-                    <h5 class="blue mt-2 fwbold text-center">Kapal Ikan PT. Marina</h5>
-                    <h6 class="blue text-center mt-1">Pemkab Batang</h6>
+                    <h5 class="blue mt-2 fwbold text-center">{{ $product->name }}</h5>
+                    <h6 class="blue text-center mt-1">{{ $product->category->name }}</h6>
                     <div class="mt-6">
-
+                        
                     </div>
                 </div>
             </div>
-            <div class="card">
+            @endforeach
+            <!-- <div class="card">
                 <div class="card-image">
                     <img src="img/maintenance.jpg" alt="" />
                 </div>
@@ -122,7 +125,7 @@
                     <h5 class="blue mt-2 fwbold text-center">Kapal Ikan PT. Marina</h5>
                     <h6 class="blue text-center mt-1">Pemkab Batang</h6>
                 </div>
-            </div>
+            </div> -->
         </div>
 
         <!-- PAGINATION -->

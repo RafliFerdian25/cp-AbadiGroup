@@ -37,37 +37,33 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
                     <li class="nav-item">
-                        <a class="nav-link text-white" aria-current="page" href="/">Beranda</a>
+                        <a class="nav-link {{ Request::is('/') ? 'text-white' : ''}}" aria-current="page" href="/">Beranda</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="/service" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle  {{ Request::is('service*') ? 'text-white' : ''}}" href="/service" data-bs-toggle="dropdown">
                             Layanan
                         </a>
                         <ul class="dropdown-menu">
+                            @foreach ( $name_services as $name_service )
+
                             <li>
-                                <a class="dropdown-item" href="/service#layanan1"> Ship Builder</a>
+                                <a class="dropdown-item"
+                                    href="/service#layanan{{ $loop->iteration }}">{{ $name_service->name }}</a>
                             </li>
-                            <li>
-                                <a class="dropdown-item" href="/service#layanan2"> Repairing </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="/service#layanan3"> Maintenance </a>
-                            </li>
+                            @endforeach
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="/product" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle  {{ Request::is('product*') ? 'text-white' : ''}}" href="/product" data-bs-toggle="dropdown">
                             Produk
                         </a>
                         <ul class="dropdown-menu">
+                            @foreach ( $name_categories as $name_category )
                             <li>
-                                <a class="dropdown-item" href="/product#kapal"> Kapal Ikan</a>
+                                <a class="dropdown-item"
+                                    href="/product/{{ $name_category->id }}">{{ $name_category->name }}</a>
                             </li>
-                            <li>
-                                <a class="dropdown-item" href="/product#kapal">
-                                    Kapal Nelayan
-                                </a>
-                            </li>
+                            @endforeach
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -102,7 +98,7 @@
                     <h4 class="text-white fwmed">CV. Satria Laksana Bahari</h4>
                     <h6 class="grey mt-3">
                         Jl. Yos Sudarso Utara 28 Seturi - Batang Prov. Jawa Tengah Telp :
-                        0285-7910914 Email : ottoko_hansamu@yahoo.co.id
+                        0285-7910914 Email : {{ $profile->email }}
                     </h6>
                 </div>
                 <div class="navigation col-12 col-lg-8 mt-lg-0 mt-4">
@@ -110,29 +106,24 @@
                         <div class="col-md-3 col-sm-4 col-6">
                             <div class="item">
                                 <h5 class="text-white">Layanan</h5>
+                                @foreach ( $name_services as $name_service )
                                 <div class="mt-lg-3 mt-2">
-                                    <a href="" class="grey text-decoration-none">Shipping Building</a>
+                                    <a href="/service#layanan{{ $loop->iteration }}"
+                                        class="grey text-decoration-none">{{ $name_service->name }}</a>
                                 </div>
-                                <div class="mt-1">
-                                    <a href="" class="grey text-decoration-none">Repairing</a>
-                                </div>
-                                <div class="mt-1">
-                                    <a href="" class="grey text-decoration-none">Maintenance</a>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-4 col-6">
                             <div class="item">
                                 <h5 class="text-white">Produk</h5>
+                                @foreach ( $name_categories as $name_category )
+
                                 <div class="mt-lg-3 mt-2">
-                                    <a href="" class="grey text-decoration-none">Kapal Ikan</a>
+                                    <a href="/product#product{{ $loop->iteration }}"
+                                        class="grey text-decoration-none">{{ $name_category->name }}</a>
                                 </div>
-                                <div class="mt-1">
-                                    <a href="" class="grey text-decoration-none">Kapal Nelayan</a>
-                                </div>
-                                <div class="mt-1">
-                                    <a href="" class="grey text-decoration-none">Lain - lain</a>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-4 col-6 mt-sm-0 mt-2">
@@ -152,9 +143,12 @@
             <div class="mt-5 mb-2">
                 <div class="d-flex align-items-center">
                     <div class="me-3">
-                        <a href="">
+                        {{-- send email --}}
+                        <a href="mailto:{{ $profile->email }}" class="text-decoration-none">
+                            <i class="fa-solid fa-envelope text-white"></i>
+                        {{-- <a href="">
                             <i class="fa-solid fa-envelope"></i>
-                        </a>
+                        </a> --}}
                     </div>
                     <a href="">
                         <i class="fa-brands fa-instagram"></i>

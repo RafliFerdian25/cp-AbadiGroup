@@ -22,8 +22,6 @@ class ProfileFactory extends Factory
             'mission' => fake()->paragraph(),
             'history' => fake()->paragraph(),
             'address' => fake()->address(),
-            'latitude' => fake()->latitude(),
-            'longitude' => fake()->longitude(),
             'phone_number' => fake()->phoneNumber(),
             'email' => fake()->email(),
         ];

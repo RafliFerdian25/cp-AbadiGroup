@@ -1,10 +1,13 @@
 /* Layanan */
 #layananItem img {
-    max-width: 100%;
+    width: 100%;
 }
 
 #layananItem .bigimg {
     display: none;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
 }
 
 #layananItem .smallimg {
@@ -24,6 +27,21 @@
     background-color: rgb(12, 42, 86, .6);
 }
 
+#layananItem p {
+    color: var(--grey);
+    font-size: 18px;
+}
+
+#testimonial p {
+    color: white;
+    font-size: 16px;
+    margin-top: .5rem;
+}
+
+#productTerbaru p {
+    color: var(--grey);
+    font-size: 16px;
+}
 
 /* ========= Responsive ========= */
 /* Desktop */
@@ -33,7 +51,7 @@
 @media screen and (min-width: 992px) {
     #layananItem .bigimg {
         display: block;
-        height: 100%;
+        max-height: 300px;
     }
 
     #layananItem .smallimg {
