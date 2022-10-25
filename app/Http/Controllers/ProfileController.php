@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Gallery;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 use App\Models\Profile;
+use App\Models\Service;
+use GuzzleHttp\Handler\Proxy;
 
 class ProfileController extends Controller
 {
@@ -16,11 +21,16 @@ class ProfileController extends Controller
     public function index()
     {
         $data = [
-            "title" => "Profile",
-            "profile" =>  Profile::all()
+            "title" => "Beranda",
+            "profile" =>  Profile::first(),
+            "services" => Service::all(),
+            "products" =>  Product::inRandomOrder()->limit(5)->with('PhotoProduct')->get(),
+            "count_product" => Product::count(),
+            "name_services"  => Service::select('name')->get(),
+            "name_categories" => Category::select('name')->get(),
         ];
-        dd($data);
-        return view("profile", $data);
+        // dd($data['products']['0']->PhotoProduct[0]->photo);
+        return view("user.index", $data);
     }
 
     /**
@@ -61,9 +71,15 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
         //
+        $data = [
+            "title" => "Admin - Edit Profile",
+            "profile" =>  Profile::first(),
+        ];
+        // dd($data);
+        return view("admin.profile-edit", $data);
     }
 
     /**
@@ -73,9 +89,24 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Profile $profile)
     {
         //
+        $validated = $request->validate([
+            'overview' => 'required',
+            'vision' => 'required',
+            'mission' => 'required',
+            'history' => 'required',
+            'address' => 'required',
+            'latitude' => 'required',
+            'longitude' => 'required',
+            'phone_number' => 'required',
+            'email' => 'required',
+        ]);
+
+        Profile::where('id', $profile->id)->update($validated);
+
+        return redirect('/admin/profile')->with('success', 'Profile updated successfully');
     }
 
     /**

@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('galleries', function (Blueprint $table) {
             $table->id();
-            $table->string('photo', 255)->nullable();
-            $table->unsignedBigInteger('news_id');
+            $table->string('photo', 255);
+            $table->unsignedBigInteger('news_id')->nullable();
             $table->foreign('news_id')->references('id')->on('news')->onDelete('cascade');
-            $table->unsignedBigInteger('service_id');
+            $table->unsignedBigInteger('service_id')->nullable();
             $table->foreign('service_id')->references('id')->on('services')->onDelete('cascade');
             $table->timestamps();
         });

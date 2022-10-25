@@ -19,6 +19,7 @@ class TestimonialFactory extends Factory
         return [
             'name' => fake()->name(),
             'position' => fake()->jobTitle(),
+            'company' => fake()->company(),
             'testimonial' => fake()->paragraph()
         ];
     }

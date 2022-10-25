@@ -21,6 +21,7 @@ class NewsFactory extends Factory
             'title' => fake()->sentence(),
             'slug' => fake()->slug(),
             'content' => fake()->paragraph(),
+            'excerpt' => fake()->paragraph(),
             'user_id' => fake()->numberBetween(1, User::count()),
         ];
     }

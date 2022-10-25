@@ -1,0 +1,66 @@
+/* Layanan */
+#layananItem img {
+    width: 100%;
+}
+
+#layananItem .bigimg {
+    display: none;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+}
+
+#layananItem .smallimg {
+    display: block;
+    max-height: 250px;
+}
+
+#testimoni .header span {
+    background-color: white;
+}
+
+#testimoni .swiper-pagination-bullet-active {
+    background-color: white;
+}
+
+.bgtestimoni {
+    background-color: rgb(12, 42, 86, .6);
+}
+
+#layananItem p {
+    color: var(--grey);
+    font-size: 18px;
+}
+
+#testimonial p {
+    color: white;
+    font-size: 16px;
+    margin-top: .5rem;
+}
+
+#productTerbaru p {
+    color: var(--grey);
+    font-size: 16px;
+}
+
+/* ========= Responsive ========= */
+/* Desktop */
+@media screen and (min-width: 1200px) {}
+
+/* Large */
+@media screen and (min-width: 992px) {
+    #layananItem .bigimg {
+        display: block;
+        max-height: 300px;
+    }
+
+    #layananItem .smallimg {
+        display: none;
+    }
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) {}
+
+/* Mobile */
+@media screen and (min-width: 576px) {}
