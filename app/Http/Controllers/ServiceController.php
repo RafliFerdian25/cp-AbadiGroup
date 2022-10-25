@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Gallery;
 use App\Models\Product;
 use App\Models\Service;
@@ -31,6 +32,20 @@ class ServiceController extends Controller
         ];
         // dd($data);
         return view("admin.service", $data);
+    }
+
+    public function userLayanan()
+    {
+        $data = [
+            "title" => "Admin - Service",
+            "services" =>  Service::with('gallery')->get(),
+            "products" =>  Product::limit(5)->with('PhotoProduct')->orderByDesc('updated_at')->get(),
+            "testimonials" =>  Testimonial::limit(5)->orderByDesc('updated_at')->get(),
+            "name_services"  => Service::select('name')->get(),
+            "name_categories" => Category::select('name')->get(),
+        ];
+        // dd($data);
+        return view("user.layanan", $data);
     }
 
     /**

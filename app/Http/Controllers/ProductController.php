@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\PhotoProduct;
 use App\Models\Product;
+use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -23,6 +24,19 @@ class ProductController extends Controller
             "products" => Product::get(),
         ];
         return view("admin.product", $data);
+    }
+
+    public function userProduct(Category $category)
+    {
+        //
+        $data = [
+            "title" => "produk",
+            "products" => Product::where('category_id', $category->id)->get(),
+            "name_services"  => Service::select('name')->get(),
+            "name_categories" => Category::select('id', 'name')->get(),
+        ];
+        // dd($data);
+        return view("user.produk", $data);
     }
 
     /**
@@ -69,8 +83,8 @@ class ProductController extends Controller
 
 
         $images = [
-                $request->file('image1')->store('assets/product'),
-            ];
+            $request->file('image1')->store('assets/product'),
+        ];
         for (
             $i = 2;
             $i <= 5;
@@ -85,9 +99,9 @@ class ProductController extends Controller
 
         foreach ($images as $image) {
             $photo = [
-                    'photo' => $image,
-                    'product_id' => $product->id
-                ];
+                'photo' => $image,
+                'product_id' => $product->id
+            ];
             PhotoProduct::create($photo);
         }
 
