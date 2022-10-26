@@ -20,8 +20,6 @@ return new class extends Migration
             $table->text('mission');
             $table->text('history');
             $table->text('address');
-            $table->float('latitude')->nullable();
-            $table->float('longitude')->nullable();
             $table->string('phone_number', 20);
             $table->string('email');
             $table->timestamps();

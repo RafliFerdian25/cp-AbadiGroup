@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Gallery;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 use App\Models\Profile;
 use App\Models\Service;
+use GuzzleHttp\Handler\Proxy;
 
 class ProfileController extends Controller
 {
@@ -21,9 +24,12 @@ class ProfileController extends Controller
             "title" => "Beranda",
             "profile" =>  Profile::first(),
             "services" => Service::all(),
-            "galleries" =>  Gallery::limit(5)->with('news')->get(),
+            "products" =>  Product::inRandomOrder()->limit(5)->with('PhotoProduct')->get(),
+            "count_product" => Product::count(),
+            "name_services"  => Service::select('name')->get(),
+            "name_categories" => Category::select('name')->get(),
         ];
-        // dd($data);
+        // dd($data['products']['0']->PhotoProduct[0]->photo);
         return view("user.index", $data);
     }
 
@@ -100,7 +106,7 @@ class ProfileController extends Controller
 
         Profile::where('id', $profile->id)->update($validated);
 
-        return redirect('/admin/edit-profile')->with('success', 'Profile updated successfully');
+        return redirect('/admin/profile')->with('success', 'Profile updated successfully');
     }
 
     /**

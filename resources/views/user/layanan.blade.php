@@ -11,70 +11,20 @@
             massa vitae dui. Leo quis feugiat eget dapibus eget at nunc vel vel urna
             porttitor.
         </h4>
-        <div class="row pt60" id="layanan1">
+        @foreach ( $services as $service )
+        <div class="row pt60 @if ($loop->even)
+            flex-row-reverse
+        @endif" id="layanan1">
             <div class="col-lg-6 col-12">
-                <h3 class="darkblue fwbold">Ship Builder</h3>
+                <h3 class="darkblue fwbold">{{ $service->name }}</h3>
                 <img src="./img/ship-builder.jpg" alt="Gambar Layanan" class="smallimg mt-lg-0 mt-2" />
-                <h5 class="mt-2 darkgrey">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur
-                    sequi provident voluptatem porro omnis, aut reiciendis animi a?
-                    Nihil illo quod expedita id veritatis suscipit nostrum ratione
-                    itaque soluta neque culpa atque est earum consequatur eaque iste,
-                    non libero incidunt nam explicabo inventore nisi? Quos deleniti,
-                    ducimus similique iure blanditiis ad quis quidem repudiandae
-                    voluptatibus maiores nisi aliquid corrupti! Obcaecati, repellendus.
-                    Voluptatem soluta corporis eos, debitis a fugiat. Ipsum, recusandae?
-                    Ipsa debitis deserunt, odio voluptate commodi eaque? Tempora, veniam
-                    harum.
-                </h5>
+                    {!! $service->description !!}
             </div>
             <div class="col-lg-6 col-12">
-                <img src="./img/ship-builder.jpg" alt="Gambar Layanan" class="bigimg" />
+                <img src="{{ asset('storage/'. $service->gallery[0]->photo) }}" alt="Gambar Layanan" class="bigimg" />
             </div>
         </div>
-        <div class="row flex-row-reverse pt60" id="layanan2">
-            <div class="col-lg-6 col-12">
-                <h3 class="darkblue fwbold">Repairing</h3>
-                <img src="./img/repairing.jpg" alt="Gambar Layanan" class="smallimg mt-lg-0 mt-2" />
-                <h5 class="mt-2 darkgrey">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus
-                    corrupti quas tempore! Eaque, corrupti quae commodi cum eum
-                    asperiores voluptatibus a laudantium delectus dignissimos facere
-                    reprehenderit doloremque odit perferendis sed.
-                </h5>
-                <ul class="mt-2">
-                    <li class="darkgrey">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam,
-                        dolore?
-                    </li>
-                    <li class="darkgrey">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam,
-                        dolore?
-                    </li>
-                </ul>
-            </div>
-            <div class="col-lg-6 col-12">
-                <img src="./img/repairing.jpg" alt="Gambar Layanan" class="bigimg" />
-            </div>
-        </div>
-        <div class="row pt60" id="layanan3">
-            <div class="col-lg-6 col-12">
-                <h3 class="darkblue fwbold">Maintenance</h3>
-                <img src="./img/maintenance.jpg" alt="Gambar Layanan" class="smallimg mt-lg-0 mt-2" />
-                <h5 class="mt-2 darkgrey">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores,
-                    cupiditate? Ad in dolor error deserunt repellat quae minima sed
-                    magnam, aut accusamus rem modi veniam atque magni sequi. Hic est
-                    quas, odio qui error veniam nostrum aperiam quo ad aliquid alias
-                    corrupti exercitationem, optio magni. Ab doloremque nesciunt,
-                    obcaecati, unde omnis vero similique saepe quos placeat quidem neque
-                    rem distinctio?
-                </h5>
-            </div>
-            <div class="col-lg-6 col-12">
-                <img src="./img/maintenance.jpg" alt="Gambar Layanan" class="bigimg" />
-            </div>
-        </div>
+        @endforeach
     </div>
     <!-- End layanan -->
 
@@ -87,76 +37,23 @@
         <div class="wx mx-auto">
             <div class="swiper ptbig">
                 <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
+                <div class="swiper-wrapper" id="testimonial">
                     <!-- Slides -->
+                    @foreach ( $testimonials as $testimonial )
+                        
                     <div class="swiper-slide">
                         <div class="p-4 bgtestimoni mx-3">
                             <div class="d-flex align-items-center">
                                 <img src="./img/icon-user.svg" alt="Icon Pengguna" width="50px" height="50px" />
                                 <div class="ms-2">
-                                    <h5 class="text-white fwmed">Musa Alfian Maulana</h5>
-                                    <h6 class="text-white mt-1">Direktur PT. Maju Mundur</h6>
+                                    <h5 class="text-white fwmed">{{ $testimonial->name }}</h5>
+                                    <h6 class="text-white mt-1">{{ $testimonial->position }} {{ $testimonial->company }}</h6>
                                 </div>
                             </div>
-                            <h6 class="text-white mt-2">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit
-                                excepturi atque natus facere quam totam omnis dolore quidem,
-                                quae corporis nostrum! Molestiae veritatis cumque nostrum
-                                aliquid exercitationem animi magni consectetur.
-                            </h6>
+                            <p>{!! $testimonial->testimonial !!}</p>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="p-4 bgtestimoni mx-3">
-                            <div class="d-flex align-items-center">
-                                <img src="./img/icon-user.svg" alt="Icon Pengguna" width="50px" height="50px" />
-                                <div class="ms-2">
-                                    <h5 class="text-white fwmed">Musa Alfian Maulana</h5>
-                                    <h6 class="text-white mt-1">Direktur PT. Maju Mundur</h6>
-                                </div>
-                            </div>
-                            <h6 class="text-white mt-2">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit
-                                excepturi atque natus facere quam totam omnis dolore quidem,
-                                quae corporis nostrum! Molestiae veritatis cumque nostrum
-                                aliquid exercitationem animi magni consectetur.
-                            </h6>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="p-4 bgtestimoni mx-3">
-                            <div class="d-flex align-items-center">
-                                <img src="./img/icon-user.svg" alt="Icon Pengguna" width="50px" height="50px" />
-                                <div class="ms-2">
-                                    <h5 class="text-white fwmed">Musa Alfian Maulana</h5>
-                                    <h6 class="text-white mt-1">Direktur PT. Maju Mundur</h6>
-                                </div>
-                            </div>
-                            <h6 class="text-white mt-2">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit
-                                excepturi atque natus facere quam totam omnis dolore quidem,
-                                quae corporis nostrum! Molestiae veritatis cumque nostrum
-                                aliquid exercitationem animi magni consectetur.
-                            </h6>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="p-4 bgtestimoni mx-3">
-                            <div class="d-flex align-items-center">
-                                <img src="./img/icon-user.svg" alt="Icon Pengguna" width="50px" height="50px" />
-                                <div class="ms-2">
-                                    <h5 class="text-white fwbold">Musa Alfian Maulana</h5>
-                                    <h6 class="text-white mt-1">Direktur PT. Maju Mundur</h6>
-                                </div>
-                            </div>
-                            <h6 class="text-white mt-2">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit
-                                excepturi atque natus facere quam totam omnis dolore quidem,
-                                quae corporis nostrum! Molestiae veritatis cumque nostrum
-                                aliquid exercitationem animi magni consectetur.
-                            </h6>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
                 <!-- If we need pagination -->
                 <div class="swiper-pagination"></div>
@@ -175,70 +72,21 @@
             <span class="position-absolute"></span>
         </div>
         <!-- Slider main container -->
-        <div class="swiper ptbig">
+        <div class="swiper ptbig" id="productTerbaru">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
+                @foreach ( $products as $product )
                 <div class="swiper-slide">
                     <div class="mx-3">
-                        <img src="./img/carousel.jpg" alt="Gambar Kapal" id="gambar1" />
+                        <img src="./storage/{{ $product->PhotoProduct[0]->photo }}" alt="Gambar Kapal" id="gambar1" />
                         <div class="mt-2">
-                            <h5 class="blue fwbold">Kapal Ikan</h5>
-                            <h6 class="darkgrey">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                Deserunt, blanditiis?
-                            </h6>
+                            <h5 class="blue fwbold">{{ $product->name }}</h5>
+                                {!! $product->description !!}
                         </div>
                     </div>
                 </div>
-                <div class="swiper-slide">
-                    <div class="mx-3">
-                        <img src="./img/carousel.jpg" alt="Gambar Kapal" id="gambar1" />
-                        <div class="mt-2">
-                            <h5 class="blue fwbold">Kapal Ikan</h5>
-                            <h6 class="darkgrey">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                Deserunt, blanditiis?
-                            </h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="mx-3">
-                        <img src="./img/carousel.jpg" alt="Gambar Kapal" id="gambar1" />
-                        <div class="mt-2">
-                            <h5 class="blue fwbold">Kapal Ikan</h5>
-                            <h6 class="darkgrey">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                Deserunt, blanditiis?
-                            </h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="mx-3">
-                        <img src="./img/carousel.jpg" alt="Gambar Kapal" id="gambar1" />
-                        <div class="mt-2">
-                            <h5 class="blue fwbold">Kapal Ikan</h5>
-                            <h6 class="darkgrey">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                Deserunt, blanditiis?
-                            </h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="mx-3">
-                        <img src="./img/carousel.jpg" alt="Gambar Kapal" id="gambar1" />
-                        <div class="mt-2">
-                            <h5 class="blue fwbold">Kapal Ikan</h5>
-                            <h6 class="darkgrey">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                Deserunt, blanditiis?
-                            </h6>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
             <!-- If we need pagination -->
             <div class="swiper-pagination"></div>

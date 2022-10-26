@@ -19,7 +19,7 @@ class PhotoProductFactory extends Factory
     {
         return [
             'product_id' => fake()->numberBetween(1, Product::count()),
-            'photo' => fake()->imageUrl(200,200),
+            'photo' => 'assets/product/Dd1nSpPOMGWBtDDR2CzSvw1AxlraBryKfCD4Gvl7.jpg',
         ];
     }
 }

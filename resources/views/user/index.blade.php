@@ -75,20 +75,7 @@
         </div>
         <div class="row ptbig justify-content-evenly">
             <div class="desc col-lg-5 col-12">
-                <h5 class="darkgrey lh-sm">
-                    Sebuah galangan kapal rakyat, yang berdiri sejak 1995. Seiring
-                    dengan saratnya pengalaman di pembangunan kapal kayu khususnya,
-                    telah menjadikan CV. Laksana Abadi menjadi galangan unggulan di
-                    wilayah Propinsi JATENG. Banyak kapal-kapal Ikan, Niaga yang
-                    telah diselesaikan oleh sentuhan anak bangsa ini.
-                </h5>
-                <h5 class="mt-3 darkgrey lh-sm">
-                    Proyek-proyek baik dari swasta (dalam negeri atau manca negara)
-                    ataupun pemerintah juga sering dikerjakan di galangan kami.
-                    Dengan mengedepankan kualitas kapal dan selalu membenahi
-                    pelayanan, kami berharap akan menjadi "leader" produksi Kapal
-                    Kayu terbesar di Indonesia.
-                </h5>
+                    {!! $profile->overview !!}
                 <button type="button" href="" class="btn__orange mt-3">
                     Baca Selengkapnya
                 </button>
@@ -97,7 +84,7 @@
                 <div class="bgblue px-4 py-3">
                     <div class="item">
                         <h5 class="fwmed">Total Pekerjaan</h5>
-                        <h1 class="fwbold mt-1">400+</h1>
+                        <h1 class="fwbold mt-1">{{ $count_product }}+</h1>
                         <h5 class="mt-1">
                             Telah berkerja sama dengan berbagai klien
                         </h5>
@@ -128,42 +115,15 @@
             <span class="position-absolute"></span>
         </div>
         <div class="row ptbig">
+            @foreach ($services as $service)
             <div class="col-xl-4 col-sm-6 col-12">
                 <div class="content text-center">
                     <i class="fa-solid fa-ship blue"></i>
-                    <h4 class="blue fw-bold mt-2">Ship Builder</h4>
-                    <h5 class="blue mt-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. In
-                        commodi explicabo eaque laborum eligendi ducimus, quasi
-                        tempora blanditiis unde magni? Commodi fuga minima veniam
-                        libero, saepe nulla assumenda illum tempora.
-                    </h5>
+                    <h4 class="blue fw-bold mt-2">{{ $service->name }}</h4>
+                    {!! $service->description !!}
                 </div>
             </div>
-            <div class="col-xl-4 col-sm-6 col-12 mt-sm-0 mt-4">
-                <div class="content text-center">
-                    <i class="fa-solid fa-ship blue"></i>
-                    <h4 class="blue fw-bold mt-2">Repairing</h4>
-                    <h5 class="blue mt-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. In
-                        commodi explicabo eaque laborum eligendi ducimus, quasi
-                        tempora blanditiis unde magni? Commodi fuga minima veniam
-                        libero, saepe nulla assumenda illum tempora.
-                    </h5>
-                </div>
-            </div>
-            <div class="col-xl-4 col-sm-6 col-12 mt-4 mt-xl-0">
-                <div class="content text-center">
-                    <i class="fa-solid fa-ship blue"></i>
-                    <h4 class="blue fw-bold mt-2">Maintenance</h4>
-                    <h5 class="blue mt-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. In
-                        commodi explicabo eaque laborum eligendi ducimus, quasi
-                        tempora blanditiis unde magni? Commodi fuga minima veniam
-                        libero, saepe nulla assumenda illum tempora.
-                    </h5>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 
@@ -178,66 +138,18 @@
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
+                @foreach ( $products as $product )
+                    
                 <div class="swiper-slide">
                     <div class="mx-3">
-                        <img src="./img/carousel.jpg" alt="Gambar Kapal" id="gambar1" />
+                        <img src="./storage/{{ $product->PhotoProduct[0]->photo }}" alt="Gambar Kapal" id="gambar1" />
                         <div class="mt-2">
-                            <h5 class="blue fwbold">Kapal Ikan</h5>
-                            <h6 class="darkgrey">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing
-                                elit. Deserunt, blanditiis?
-                            </h6>
+                            <h5 class="blue fwbold">{{ $product->name }}</h5>
+                                {!! $product->description !!}
                         </div>
                     </div>
                 </div>
-                <div class="swiper-slide">
-                    <div class="mx-3">
-                        <img src="./img/carousel.jpg" alt="Gambar Kapal" id="gambar1" />
-                        <div class="mt-2">
-                            <h5 class="blue fwbold">Kapal Ikan</h5>
-                            <h6 class="darkgrey">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing
-                                elit. Deserunt, blanditiis?
-                            </h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="mx-3">
-                        <img src="./img/carousel.jpg" alt="Gambar Kapal" id="gambar1" />
-                        <div class="mt-2">
-                            <h5 class="blue fwbold">Kapal Ikan</h5>
-                            <h6 class="darkgrey">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing
-                                elit. Deserunt, blanditiis?
-                            </h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="mx-3">
-                        <img src="./img/carousel-img.jpg" alt="Gambar Kapal" id="gambar1" />
-                        <div class="mt-2">
-                            <h5 class="blue fwbold">Kapal Ikan</h5>
-                            <h6 class="darkgrey">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing
-                                elit. Deserunt, blanditiis?
-                            </h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="mx-3">
-                        <img src="./img/carousel-img.jpg" alt="Gambar Kapal" id="gambar1" />
-                        <div class="mt-2">
-                            <h5 class="blue fwbold">Kapal Ikan</h5>
-                            <h6 class="darkgrey">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing
-                                elit. Deserunt, blanditiis?
-                            </h6>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
             <!-- If we need pagination -->
             <div class="swiper-pagination"></div>
@@ -256,6 +168,7 @@
         </div>
         <div class="row ptbig">
             <div class="col-lg-6 col-12">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247.56535129202263!2d109.74645593881567!3d-6.885139060447772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7024d77ee9f859%3A0x4bfa65449d1c2299!2sCV.%20LAKSANA%20ABADI!5e0!3m2!1sid!2sid!4v1665771801940!5m2!1sid!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div class="col-lg-6 col-12">
                 <form>

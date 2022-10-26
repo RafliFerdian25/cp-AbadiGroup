@@ -38,7 +38,8 @@ Route::resource('/admin/news', NewsController::class)->middleware('auth');
 // routes navigasi user
 Route::get('/', [ProfileController::class, 'index']);
 Route::get('/service', [ServiceController::class, 'userLayanan']);
-Route::get('/product', [ProductController::class, 'userProduk']);
+Route::get('/product', [ProductController::class, 'userProduct']);
+Route::get('/product/{category:id}', [ProductController::class, 'userProduct']);
 Route::get('/news', [NewsController::class, 'index']);
 
 
