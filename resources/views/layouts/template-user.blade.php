@@ -99,7 +99,7 @@
         <div class="wx mx-auto pt-5">
             <div class="row">
                 <div class="col-12 col-lg-4">
-                    <h4 class="text-white fwmed">CV. Satria Laksana Bahari</h4>
+                    <h4 class="text-white fwmed">CV. Laksana Bahari</h4>
                     <h6 class="grey mt-3">
                         Jl. Yos Sudarso Utara 28 Seturi - Batang Prov. Jawa Tengah Telp :
                         0285-7910914 Email : ottoko_hansamu@yahoo.co.id

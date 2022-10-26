@@ -255,7 +255,8 @@
             <span class="position-absolute"></span>
         </div>
         <div class="row ptbig">
-            <div class="col-lg-6 col-12"></div>
+            <div class="col-lg-6 col-12">
+            </div>
             <div class="col-lg-6 col-12">
                 <form>
                     <div class="mb-3">
@@ -277,4 +278,9 @@
             </div>
         </div>
     </div>
+
+
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDq8eZFMZBCjWamg8vzRjIYjY2kNh8vOak&callback=initMap"></script>
+    <!-- End google map -->
 @endsection

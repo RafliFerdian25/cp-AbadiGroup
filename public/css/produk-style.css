@@ -43,7 +43,7 @@
     }
 }
 
-/* CARDS */
+/* Custom card */
 
 .card-container {
     min-height: calc(100vh - 4rem);
@@ -63,12 +63,15 @@
 }
 
 .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: relative;
     background: #fff;
     max-width: 20em;
     width: 20em;
     height: auto;
-    margin: 1.5em;
+    margin: 1rem;
     overflow: hidden;
     cursor: pointer;
     border-radius: 0;
@@ -88,211 +91,73 @@
 .card-image img {
     max-width: 100%;
     height: 16em;
+    object-fit: cover;
 }
 
-.card-info {
-    position: relative;
-    color: #222;
-    padding: 0.6em 2.2em 2.2em;
+.card-desc .left {
+    width: 55%;
 }
 
-.card-info h3 {
-    font-size: 1.8em;
-    font-weight: 800;
-    margin-bottom: 0.3em;
+.card-desc .left h6:first-child {
+    width: 90%;
 }
 
-.card-info p {
-    font-size: 1em;
-    margin-bottom: 0.3em;
+.card-desc .left h6:last-child {
+    width: 10%;
 }
 
-
-/* PAGINATION */
-
-.pagination {
-    text-align: center;
-    margin: 1.9em 1.9em 3.8em;
-    user-select: none;
+.card-desc .right {
+    width: 40%;
 }
 
-.pagination li {
-    display: inline-block;
-    margin: 0.3em;
+/* End custom card */
+
+/* Custom pagination */
+.pagination path {
+    color: #134C9D;
 }
 
-.pagination li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1em;
-    line-height: 2.6em;
-}
-
-.previous-page,
-.next-page {
-    width: 5em;
-    cursor: pointer;
-}
-
-/* .previous-page:hover {
-    transform: translateX(-5px);
-}
-
-.next-page:hover {
-    transform: translateX(5px);
-} */
-
-.current-page,
-.dots {
-    width: 2.8em;
+.current-page a {
+    background: none;
     border-radius: 50%;
-    cursor: pointer;
+    text-align: center;
+    width: 40px;
+    max-width: 40px;
+    height: 40px;
 }
 
-.current-page:hover,
-.dots:hover {
-    transform: translateY(-5px);
-}
-
-.pagination li.active {
-    background: #333;
-}
-
-.pagination li.disable {
-    background: #ccc;
-}
-
-
-/* MEDIA QUERIES */
-
-@media (max-width: 952px) {
-    label.logo {
-        font-size: 1.6rem;
-        padding-left: 1rem;
-    }
-
-    nav ul li a {
-        font-size: 1rem;
-    }
-}
-
-@media (min-width: 100px) and (max-width: 800px) {
-    body {
-        font-size: 12px;
-    }
-
-    .pagination {
-        display: flex;
-        justify-content: center;
-        flex-direction: row;
-        width: 100%;
-    }
-}
-
-@media (max-width: 858px) {
-    .checkbtn {
-        display: block;
-    }
-
-    nav ul {
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        background: #121211;
-        top: 4rem;
-        right: -100%;
-        text-align: center;
-        margin: 0;
-    }
-
-    nav ul li {
-        display: block;
-        margin: 3rem 0;
-        line-height: 2rem;
-    }
-
-    nav ul li a {
-        font-size: 1.3rem;
-    }
-
-    nav ul li a.active,
-    nav ul li a:hover,
-    nav ul li a:focus {
-        background: none;
-        color: #fff;
-        letter-spacing: 2px;
-        font-weight: 600;
-        border-top: 1px solid #fff;
-        border-bottom: 1px solid #fff;
-        border-radius: 0;
-        text-decoration: none;
-    }
-
-    #check:checked~ul {
-        right: 0;
-    }
-}
-
-
-/* DISABLED */
-
-
-/* 
-.card-content {
-    margin: 30px;
-}
-
-.card {
-    max-width: 325px;
-    width: 325px;
-    height: auto;
-    margin: 25px;
-}
-
-.card-image {
-    max-height: 200px;
-}
-
-.card-image img {
-    max-width: 100%;
-    height: auto;
-}
-
-.card-info {
-    padding: 10px 20px 20px;
-}
-
-.card-info h3 {
-    margin-bottom: 5px;
-}
-
-.card-info p {
-    margin-bottom: 5px;
-}
-
-
-.pagination {
-    display: flex;
-    flex-direction: row;
-    margin: 30px 30px 60px;
-}
-
-.pagination li {
-    margin: 5px;
+.current-page a:hover {
+    background-color: #134C9D;
+    color: white;
 }
 
 .pagination li a {
-    font-size: 1em; 1.2em
-    line-height: 35px; 45px
+    margin: 0 .5rem;
+    font-size: 16px;
 }
 
-.previous-page,
-.next-page {
-    width: 60px; 80px
+.pagination .previous-page a {
+    border: none;
+    border-color: lightgray;
 }
 
-.current-page,
-.dots {
-    width: 35px; 45px
+.pagination .previous-page a:focus {
+    box-shadow: none;
 }
-*/
+
+.pagination .next-page a:focus {
+    box-shadow: none;
+}
+
+.pagination .active a {
+    background-color: #134C9D;
+    color: white;
+    text-align: center;
+    border-radius: 50%;
+    border: none;
+    width: 40px;
+    max-width: 40px;
+    height: 40px;
+}
+
+/* End custom pagination
