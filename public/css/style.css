@@ -351,6 +351,11 @@ form button {
     border-radius: 0 !important;
 }
 
+.lokasi {
+    width: 100%;
+    height: auto;
+}
+
 /* Footer */
 footer {
     margin-top: 60px;
