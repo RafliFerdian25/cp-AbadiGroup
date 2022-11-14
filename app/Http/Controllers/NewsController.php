@@ -25,6 +25,16 @@ class NewsController extends Controller
         return view("admin.news", $data);
     }
 
+    public function userNews()
+    {
+        //
+        $data = [
+            "title" => "Admin - News",
+            "posts" => News::with('gallery')->get(),
+        ];
+        return view("user.news", $data);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
