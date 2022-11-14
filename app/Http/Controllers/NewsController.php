@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Gallery;
 use App\Models\News;
+use App\Models\Profile;
+use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -29,10 +32,26 @@ class NewsController extends Controller
     {
         //
         $data = [
-            "title" => "Admin - News",
+            "title" => "Kegiatan",
             "posts" => News::with('gallery')->get(),
+            "profile" =>  Profile::first(),
+            "name_services"  => Service::select('name')->get(),
+            "name_categories" => Category::select('id', 'name')->get()
         ];
-        return view("user.news", $data);
+        return view("user.kegiatan", $data);
+    }
+
+    public function detailNews()
+    {
+        //
+        $data = [
+            "title" => "Detail Kegiatan",
+            "posts" => News::with('gallery')->get(),
+            "profile" =>  Profile::first(),
+            "name_services"  => Service::select('name')->get(),
+            "name_categories" => Category::select('id', 'name')->get()
+        ];
+        return view("user.detail-kegiatan", $data);
     }
 
     /**

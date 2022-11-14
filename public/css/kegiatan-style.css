@@ -1,0 +1,13 @@
+.kegiatan .card {
+    border: 1px solid lightgray;
+}
+
+.kegiatan .card__image {
+    width: 100%;
+}
+
+.kegiatan .card__image img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+}

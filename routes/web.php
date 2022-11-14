@@ -42,7 +42,7 @@ Route::get('/', [ProfileController::class, 'index']);
 Route::get('/service', [ServiceController::class, 'userLayanan']);
 Route::get('/product', [ProductController::class, 'userProduct']);
 Route::get('/product/{category:id}', [ProductController::class, 'userProduct']);
-Route::get('/news', [NewsController::class, 'index']);
+Route::get('/news', [NewsController::class, 'userNews']);
 
 
 Route::get('/gallery', [GalleryController::class, 'index']);
