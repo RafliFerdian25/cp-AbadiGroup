@@ -159,3 +159,9 @@
 }
 
 /* End custom pagination
+
+
+/* ============= Detail Produk ============= */
+.detail__produk img {
+    max-width: 600px;
+}
