@@ -2,6 +2,14 @@
 
 @section('content')
     <div class="wx mx-auto pt60" id="detailKegiatan">
+        <div class="navback d-flex align-items-center mb-3">
+            <a href="" class="text-decoration-none me-3">
+                <i class="fa-solid fa-arrow-left-long"></i>
+            </a>
+            <a href="" class="text-decoration-none blue">Kegiatan</a>
+            <span class="mx-2 blue">/</span>
+            <a href="" class="text-decoration-none darkgrey">Detail Kegiatan</a>
+        </div>
         <div class="row">
             <div class="col-lg-7 col-12">
                 <h3 class="fw-bold">Detail Kegiatan</h3>
@@ -22,7 +30,8 @@
                             <div class="image mb-2">
                                 <img src="/img/maintenance.jpg" alt="Foto Detail Kegiatan">
                             </div>
-                            <a href="/news/{{ $other_new->id }}" class="blue text-decoration-none fwbold">{{ $other_new->title }}</a>
+                            <a href="/news/{{ $other_new->id }}"
+                                class="blue text-decoration-none fwbold">{{ $other_new->title }}</a>
                             <p class="darkgrey">{{ $other_new->updated_at }}</p>
                         </div>
                     @endforeach

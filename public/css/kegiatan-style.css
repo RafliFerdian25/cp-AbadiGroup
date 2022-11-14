@@ -14,6 +14,10 @@
 }
 
 /* ============= Detail Kegiatan ============= */
+#detailKegiatan path {
+    color: var(--blue) !important;
+}
+
 #detailKegiatan .image {
     width: 100%;
 }
@@ -24,7 +28,6 @@
 
 #detailKegiatan .card__lainnya .image img {
     width: 100%;
-    max-width: ;
     height: 180px;
     object-fit: cover;
 }

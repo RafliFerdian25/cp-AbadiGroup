@@ -6,9 +6,9 @@
             <a href="" class="text-decoration-none blue darkgrey me-3">
                 <i class="fa-solid fa-arrow-left-long"></i>
             </a>
-            <a href="" class="text-decoration-none darkgrey">Produk</a>
+            <a href="" class="text-decoration-none blue">Produk</a>
             <span class="mx-2">/</span>
-            <a href="" class="text-decoration-none blue">Detail Produk</a>
+            <a href="" class="text-decoration-none darkgrey">Detail Produk</a>
         </div>
         <h3 class="fwbold mb-2">Detail Produk</h3>
         <div class="row">
