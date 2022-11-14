@@ -1,3 +1,4 @@
+/* ============= Kegiatan ============= */
 .kegiatan .card {
     border: 1px solid lightgray;
 }
@@ -9,5 +10,21 @@
 .kegiatan .card__image img {
     width: 100%;
     max-height: 300px;
+    object-fit: cover;
+}
+
+/* ============= Detail Kegiatan ============= */
+#detailKegiatan .image {
+    width: 100%;
+}
+
+#detailKegiatan .image img {
+    width: 100%;
+}
+
+#detailKegiatan .card__lainnya .image img {
+    width: 100%;
+    max-width: ;
+    height: 180px;
     object-fit: cover;
 }
