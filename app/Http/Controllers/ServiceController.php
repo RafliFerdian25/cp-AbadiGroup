@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Gallery;
 use App\Models\Product;
+use App\Models\Profile;
 use App\Models\Service;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
@@ -41,8 +42,9 @@ class ServiceController extends Controller
             "services" =>  Service::with('gallery')->get(),
             "products" =>  Product::limit(5)->with('PhotoProduct')->orderByDesc('updated_at')->get(),
             "testimonials" =>  Testimonial::limit(5)->orderByDesc('updated_at')->get(),
+            "profile" =>  Profile::first(),
             "name_services"  => Service::select('name')->get(),
-            "name_categories" => Category::select('name')->get(),
+            "name_categories" => Category::select('id', 'name')->get(),
         ];
         // dd($data);
         return view("user.layanan", $data);
@@ -56,7 +58,10 @@ class ServiceController extends Controller
     public function create()
     {
         //
-        return view("admin.service-create");
+        $data = [
+            "title" => "Admin - Service",
+        ];
+        return view("admin.service-create", $data);
     }
 
     /**

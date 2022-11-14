@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
 class TestimonialController extends Controller
@@ -14,6 +15,12 @@ class TestimonialController extends Controller
     public function index()
     {
         //
+        $data = [
+            "title" => "Admin - Testimonial",
+            "testimonials" =>  Testimonial::all(),
+        ];
+        // dd($data);
+        return view("admin.testimonial", $data);
     }
 
     /**
@@ -24,6 +31,10 @@ class TestimonialController extends Controller
     public function create()
     {
         //
+        $data = [
+            "title" => "Admin - Testimonial",
+        ];
+        return view("admin.testimonial-create", $data);
     }
 
     /**
@@ -35,6 +46,16 @@ class TestimonialController extends Controller
     public function store(Request $request)
     {
         //
+        $validated = $request->validate([
+            'name' => 'required',
+            'position' => 'required',
+            'company' => 'required',
+            'testimonial' => 'required',
+        ]);
+
+        $testimonial = Testimonial::create($validated);
+
+        return redirect('/admin/testimonial')->with('create', 'Testimonial created successfully');
     }
 
     /**

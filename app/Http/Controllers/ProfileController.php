@@ -27,7 +27,7 @@ class ProfileController extends Controller
             "products" =>  Product::inRandomOrder()->limit(5)->with('PhotoProduct')->get(),
             "count_product" => Product::count(),
             "name_services"  => Service::select('name')->get(),
-            "name_categories" => Category::select('name')->get(),
+            "name_categories" => Category::select('id', 'name')->get(),
         ];
         // dd($data['products']['0']->PhotoProduct[0]->photo);
         return view("user.index", $data);

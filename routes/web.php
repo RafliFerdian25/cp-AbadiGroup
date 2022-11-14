@@ -7,6 +7,7 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\TestimonialController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,6 +35,7 @@ Route::resource('/admin/service', ServiceController::class)->middleware('auth');
 Route::resource('/admin/category', CategoryController::class)->middleware('auth');
 Route::resource('/admin/product', ProductController::class)->middleware('auth');
 Route::resource('/admin/news', NewsController::class)->middleware('auth');
+Route::resource('/admin/testimonial', TestimonialController::class)->middleware('auth');
 
 // routes navigasi user
 Route::get('/', [ProfileController::class, 'index']);

@@ -14,7 +14,7 @@
         @foreach ( $services as $service )
         <div class="row pt60 @if ($loop->even)
             flex-row-reverse
-        @endif" id="layanan1">
+        @endif" id="layanan{{ $loop->iteration }}">
             <div class="col-lg-6 col-12">
                 <h3 class="darkblue fwbold">{{ $service->name }}</h3>
                 <img src="./img/ship-builder.jpg" alt="Gambar Layanan" class="smallimg mt-lg-0 mt-2" />

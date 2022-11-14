@@ -156,7 +156,7 @@
                 </div>
             </div>
             <div class="border-top py-3 text-white text-center">
-                Copyright 2022. CV Satria Laksana Bahari.
+                Copyright {{ date('Y') }}. CV Satria Laksana Bahari.
             </div>
         </div>
     </footer>

@@ -111,6 +111,13 @@
                     <span>Kegiatan</span>
                 </a>
             </li>
+            <!-- Nav Item - testimonial -->
+            <li class="nav-item {{ Request::is('admin/testimonial*') ? 'active' : '' }}">
+                <a class="nav-link" href="/admin/testimonial">
+                    <i class="fa-sharp fa-solid fa-newspaper"></i>
+                    <span>Testimoni</span>
+                </a>
+            </li>
             <!-- Nav Item - logout -->
             <li class="nav-item">
                 <form action="/logout" method="post" class="">
@@ -158,7 +165,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
+                        <span>Copyright &copy; Your Website {{ date('Y') }}</span>
                     </div>
                 </div>
             </footer>
