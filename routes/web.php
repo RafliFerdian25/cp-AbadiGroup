@@ -43,6 +43,7 @@ Route::get('/service', [ServiceController::class, 'userLayanan']);
 Route::get('/product', [ProductController::class, 'userProduct']);
 Route::get('/product/{category:id}', [ProductController::class, 'userProduct']);
 Route::get('/news', [NewsController::class, 'userNews']);
+Route::get('/news/{id}', [NewsController::class, 'detailNews']);
 
 
 Route::get('/gallery', [GalleryController::class, 'index']);

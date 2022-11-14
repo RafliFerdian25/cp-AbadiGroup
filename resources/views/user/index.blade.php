@@ -171,29 +171,41 @@
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247.56535129202263!2d109.74645593881567!3d-6.885139060447772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7024d77ee9f859%3A0x4bfa65449d1c2299!2sCV.%20LAKSANA%20ABADI!5e0!3m2!1sid!2sid!4v1665771801940!5m2!1sid!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div class="col-lg-6 col-12">
-                <form>
+                {{-- <form> --}}
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Nama Lengkap</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1"
+                        <label for="nama_lengkap" class="form-label">Nama Lengkap</label>
+                        <input type="text" class="form-control" id="nama_lengkap"
                             aria-describedby="emailHelp" />
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Nomor Telepon</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1"
+                        <label for="email_pemesan" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email_pemesan"
                             aria-describedby="emailHelp" />
                     </div>
                     <div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label">Pesan</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <label for="pesan" class="form-label">Pesan</label>
+                        <textarea class="form-control" id="pesan" rows="3"></textarea>
                     </div>
-                    <button type="submit" class="btn__blue w-100">Submit</button>
-                </form>
+                    <button type="submit" class="btn__blue w-100" onclick="pemesanan()">Submit</button>
+                {{-- </form> --}}
             </div>
         </div>
     </div>
 
-
     <script async
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDq8eZFMZBCjWamg8vzRjIYjY2kNh8vOak&callback=initMap"></script>
     <!-- End google map -->
+    <script>
+        function pemesanan() {
+            number = {{ trim($profile->phone_number) }};
+            nama = document.getElementById("nama_lengkap").value;
+            email = document.getElementById("email_pemesan").value;
+            pesan = document.getElementById("pesan").value;
+
+            let url = "https://wa.me/";
+
+            let end_url = `${url}${number}?text=nama: ${nama} %0Aemail: ${email} %0Apesan: ${pesan}`;
+            window.open(end_url, "_blank");
+        }
+    </script>
 @endsection

@@ -33,7 +33,7 @@ class NewsController extends Controller
         //
         $data = [
             "title" => "Kegiatan",
-            "posts" => News::with('gallery')->get(),
+            "news" => News::with('gallery')->get(),
             "profile" =>  Profile::first(),
             "name_services"  => Service::select('name')->get(),
             "name_categories" => Category::select('id', 'name')->get()
@@ -41,12 +41,12 @@ class NewsController extends Controller
         return view("user.kegiatan", $data);
     }
 
-    public function detailNews()
+    public function detailNews($id)
     {
         //
         $data = [
             "title" => "Detail Kegiatan",
-            "posts" => News::with('gallery')->get(),
+            "posts" => News::with('gallery')->find($id),
             "profile" =>  Profile::first(),
             "name_services"  => Service::select('name')->get(),
             "name_categories" => Category::select('id', 'name')->get()
