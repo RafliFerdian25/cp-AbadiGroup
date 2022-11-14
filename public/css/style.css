@@ -70,9 +70,11 @@ h6 {
     font-size: 14px;
 }
 
-.wx {
+.wx,
+.wx__produk {
     width: 85%;
 }
+
 
 .pt60 {
     padding-top: 40px;

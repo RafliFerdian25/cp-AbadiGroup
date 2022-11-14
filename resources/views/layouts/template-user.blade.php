@@ -47,10 +47,10 @@
                         </a>
                         <ul class="dropdown-menu">
                             @foreach ($name_services as $name_service)
-                                <li>
-                                    <a class="dropdown-item"
-                                        href="/service#layanan{{ $loop->iteration }}">{{ $name_service->name }}</a>
-                                </li>
+                            <li>
+                                <a class="dropdown-item"
+                                    href="/service#layanan{{ $loop->iteration }}">{{ $name_service->name }}</a>
+                            </li>
                             @endforeach
                         </ul>
                     </li>
@@ -61,15 +61,15 @@
                         </a>
                         <ul class="dropdown-menu">
                             @foreach ($name_categories as $name_category)
-                                <li>
-                                    <a class="dropdown-item"
-                                        href="/product/{{ $name_category->id }}">{{ $name_category->name }}</a>
-                                </li>
+                            <li>
+                                <a class="dropdown-item"
+                                    href="/product/{{ $name_category->id }}">{{ $name_category->name }}</a>
+                            </li>
                             @endforeach
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/news">
+                        <a class="nav-link {{ Request::is('news*') ? 'text-white' : '' }}" href="/news">
                             Kegiatan
                         </a>
                     </li>
@@ -98,10 +98,10 @@
                             <div class="item">
                                 <h5 class="text-white">Layanan</h5>
                                 @foreach ($name_services as $name_service)
-                                    <div class="mt-lg-3 mt-2">
-                                        <a href="/service#layanan{{ $loop->iteration }}"
-                                            class="grey text-decoration-none">{{ $name_service->name }}</a>
-                                    </div>
+                                <div class="mt-lg-3 mt-2">
+                                    <a href="/service#layanan{{ $loop->iteration }}"
+                                        class="grey text-decoration-none">{{ $name_service->name }}</a>
+                                </div>
                                 @endforeach
                             </div>
                         </div>
@@ -109,10 +109,10 @@
                             <div class="item">
                                 <h5 class="text-white">Produk</h5>
                                 @foreach ($name_categories as $name_category)
-                                    <div class="mt-lg-3 mt-2">
-                                        <a href="/product#product{{ $loop->iteration }}"
-                                            class="grey text-decoration-none">{{ $name_category->name }}</a>
-                                    </div>
+                                <div class="mt-lg-3 mt-2">
+                                    <a href="/product#product{{ $loop->iteration }}"
+                                        class="grey text-decoration-none">{{ $name_category->name }}</a>
+                                </div>
                                 @endforeach
                             </div>
                         </div>
