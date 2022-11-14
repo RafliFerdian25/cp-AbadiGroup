@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col-xl-6 col-12 mb-xl-0 mb-3">
                 <div class="image w-100">
-                    <img src="/img/maintenance.jpg" width="100%" alt="Foto Detail Produk">
+                    <img src="{{ asset('storage/' . $product->PhotoProduct[0]->photo) }}" width="100%" alt="Foto Detail Produk">
                 </div>
             </div>
             <div class="col-xl-6 col-12">
@@ -26,7 +26,7 @@
                         </div>
                     </div>
                     <div class="col-8 px-0">
-                        <h5>Kapal Pesiar</h5>
+                        <h5>{{ $product->name }}</h5>
                     </div>
                 </div>
                 <div class="row mb-2">
@@ -36,11 +36,19 @@
                             <h5>:</h5>
                         </div>
                     </div>
-                    <div class="col-8 px-0">
-                        <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. A illo voluptatibus architecto mollitia
-                            harum, quam accusantium. Fugit quaerat hic vero laudantium, accusamus, recusandae mollitia
-                            aliquam tenetur repellendus ad excepturi, voluptatibus ipsum facilis impedit eum laborum
-                            dolorem. Non, consectetur explicabo. Illo!</h5>
+                    <div class="col-8 px-0" id="description__product">
+                        {!! $product->description !!}
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-4">
+                        <div class="d-flex justify-content-between">
+                            <h5>Kategori</h5>
+                            <h5>:</h5>
+                        </div>
+                    </div>
+                    <div class="col-8 px-0" id="description__product">
+                        <h5>{{  $product->category->name  }}</h5>
                     </div>
                 </div>
                 <div class="row mb-2">
@@ -51,7 +59,73 @@
                         </div>
                     </div>
                     <div class="col-8 px-0">
-                        <h5>Rp 4.000.000.000</h5>
+                        <h5>{{ $product->price }}</h5>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-4">
+                        <div class="d-flex justify-content-between">
+                            <h5>Panjang (M)</h5>
+                            <h5>:</h5>
+                        </div>
+                    </div>
+                    <div class="col-8 px-0">
+                        <h5>{{ $product->length }}</h5>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-4">
+                        <div class="d-flex justify-content-between">
+                            <h5>Luas (M)</h5>
+                            <h5>:</h5>
+                        </div>
+                    </div>
+                    <div class="col-8 px-0">
+                        <h5>{{ $product->breadth }}</h5>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-4">
+                        <div class="d-flex justify-content-between">
+                            <h5>Kedalaman</h5>
+                            <h5>:</h5>
+                        </div>
+                    </div>
+                    <div class="col-8 px-0">
+                        <h5>{{ $product->depth }}</h5>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-4">
+                        <div class="d-flex justify-content-between">
+                            <h5>Kecepatan (Knot)</h5>
+                            <h5>:</h5>
+                        </div>
+                    </div>
+                    <div class="col-8 px-0">
+                        <h5>{{ $product->speed }}</h5>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-4">
+                        <div class="d-flex justify-content-between">
+                            <h5>Mesin Utama</h5>
+                            <h5>:</h5>
+                        </div>
+                    </div>
+                    <div class="col-8 px-0">
+                        <h5>{{ $product->main_engine }}</h5>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-4">
+                        <div class="d-flex justify-content-between">
+                            <h5>Jumlah Mesin</h5>
+                            <h5>:</h5>
+                        </div>
+                    </div>
+                    <div class="col-8 px-0">
+                        <h5>{{ $product->number_of_engine }}</h5>
                     </div>
                 </div>
             </div>
