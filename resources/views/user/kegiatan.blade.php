@@ -15,7 +15,7 @@
                 <div class="col-xl-4 col-md-6 col-12">
                     <div class="card bgwhite p-4">
                         <div class="card__image">
-                            <img src="/img/repairing.jpg" alt="Foto Kegiatan">
+                            <img src="{{ asset('storage/'.$new->gallery[0]->photo) }}" alt="Foto Kegiatan">
                         </div>
                         <div class="mt-2 card__header">
                             <h5 class="fwbold blue">{{ $new->title }}</h5>

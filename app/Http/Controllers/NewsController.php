@@ -38,6 +38,7 @@ class NewsController extends Controller
             "name_services"  => Service::select('name')->get(),
             "name_categories" => Category::select('id', 'name')->get()
         ];
+        // dd($data['news']);
         return view("user.kegiatan", $data);
     }
 
@@ -206,6 +207,6 @@ class NewsController extends Controller
         }
         News::destroy($id);
 
-        return redirect('/admin/news')->with('destroy', 'News created successfully');
+        return redirect('/admin/news')->with('destroy', 'News deleted successfully');
     }
 }
