@@ -39,10 +39,14 @@ Route::resource('/admin/testimonial', TestimonialController::class)->middleware(
 
 // routes navigasi user
 Route::get('/', [ProfileController::class, 'index']);
+Route::get('/profile', [ProfileController::class, 'userProfile']);
+
 Route::get('/service', [ServiceController::class, 'userLayanan']);
+
 Route::get('/product', [ProductController::class, 'userProduct']);
 Route::get('/product/{category:id}', [ProductController::class, 'userProduct']);
 Route::get('/product/detail/{product:id}', [ProductController::class, 'userProductDetail']);
+
 Route::get('/news', [NewsController::class, 'userNews']);
 Route::get('/news/{id}', [NewsController::class, 'detailNews']);
 

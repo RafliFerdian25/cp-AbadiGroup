@@ -47,11 +47,13 @@ class NewsController extends Controller
         //
         $data = [
             "title" => "Detail Kegiatan",
-            "posts" => News::with('gallery')->find($id),
+            "news" => News::with('gallery')->find($id),
+            "other_news" => News::with('gallery')->where('id', '!=', $id)->orderBy("updated_at", "DESC")->limit(3)->get(),
             "profile" =>  Profile::first(),
             "name_services"  => Service::select('name')->get(),
             "name_categories" => Category::select('id', 'name')->get()
         ];
+        // dd($data['other_news']);
         return view("user.detail-kegiatan", $data);
     }
 

@@ -22,7 +22,7 @@
                             <p class="darkgrey mt-1 mb-0">{{ $new->updated_at }}</p>
                         </div>
                         <div class="mt-3 card__desc">
-                            <h6 class="mb-2">{{ $new->excerpt }}</h6>
+                            <h6 class="mb-2">{!! $new->excerpt !!}</h6>
                             <a href="/news/{{ $new->id }}" class="text-decoration-none">Baca Selengkapnya</a>
                         </div>
                     </div>

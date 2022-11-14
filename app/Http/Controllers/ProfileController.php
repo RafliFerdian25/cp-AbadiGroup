@@ -33,6 +33,19 @@ class ProfileController extends Controller
         return view("user.index", $data);
     }
 
+    public function userProfile()
+    {
+        //
+        $data = [
+            "title" => "Profile",
+            "profile" =>  Profile::first(),
+            "name_services"  => Service::select('name')->get(),
+            "name_categories" => Category::select('id', 'name')->get()
+        ];
+        // dd($data['news']);
+        return view("user.profile", $data);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
