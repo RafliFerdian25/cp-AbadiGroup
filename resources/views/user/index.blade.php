@@ -191,4 +191,9 @@
             </div>
         </div>
     </div>
+
+
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDq8eZFMZBCjWamg8vzRjIYjY2kNh8vOak&callback=initMap"></script>
+    <!-- End google map -->
 @endsection
