@@ -41,6 +41,21 @@ class ProductController extends Controller
         return view("user.produk", $data);
     }
 
+    public function userProductDetail(Product $product)
+    {
+        //
+        $data = [
+            "title" => "produk",
+            "product" => Product::find($product->id),
+            "profile" =>  Profile::first(),
+            "name_services"  => Service::select('name')->get(),
+            "name_categories" => Category::select('id', 'name')->get(),
+        ];
+        // dd($data['product']);
+        // dd($category);
+        return view("user.detail-produk", $data);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
