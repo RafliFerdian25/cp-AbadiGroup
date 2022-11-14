@@ -165,3 +165,7 @@
 .detail__produk img {
     max-width: 600px;
 }
+
+#description__product p {
+    font-size: 18px;
+}

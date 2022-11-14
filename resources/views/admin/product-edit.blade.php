@@ -121,7 +121,7 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="speed" class="col-sm-2 col-form-label">Kecepatan</label>
+                            <label for="speed" class="col-sm-2 col-form-label">Kecepatan (Knot)</label>
                             <div class="col-sm-10">
                                 <input required type="number" value="{{ old('speed', $product->speed) }}" class="form-control @error('speed')
                                     is-invalid
