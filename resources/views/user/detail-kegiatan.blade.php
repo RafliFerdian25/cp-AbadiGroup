@@ -3,7 +3,7 @@
 @section('content')
     <div class="wx mx-auto pt60" id="detailKegiatan">
         <div class="navback d-flex align-items-center mb-3">
-            <a href="" class="text-decoration-none me-3">
+            <a href="/news" class="text-decoration-none me-3">
                 <i class="fa-solid fa-arrow-left-long"></i>
             </a>
             <a href="/news" class="text-decoration-none blue">Kegiatan</a>

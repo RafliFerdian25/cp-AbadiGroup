@@ -3,7 +3,7 @@
 @section('content')
     <div class="wx mx-auto detail__produk pt60">
         <div class="navback d-flex align-items-center mb-3">
-            <a href="" class="text-decoration-none blue darkgrey me-3">
+            <a href="/product/{{ $product->category_id }}" class="text-decoration-none blue darkgrey me-3">
                 <i class="fa-solid fa-arrow-left-long"></i>
             </a>
             <a href="/product/{{ $product->category_id }}" class="text-decoration-none blue">Produk</a>
@@ -14,7 +14,8 @@
         <div class="row">
             <div class="col-xl-6 col-12 mb-xl-0 mb-3">
                 <div class="image w-100">
-                    <img src="{{ asset('storage/' . $product->PhotoProduct[0]->photo) }}" width="100%" alt="Foto Detail Produk">
+                    <img src="{{ asset('storage/' . $product->PhotoProduct[0]->photo) }}" width="100%"
+                        alt="Foto Detail Produk">
                 </div>
             </div>
             <div class="col-xl-6 col-12">
@@ -48,7 +49,7 @@
                         </div>
                     </div>
                     <div class="col-8 px-0" id="description__product">
-                        <h5>{{  $product->category->name  }}</h5>
+                        <h5>{{ $product->category->name }}</h5>
                     </div>
                 </div>
                 <div class="row mb-2">

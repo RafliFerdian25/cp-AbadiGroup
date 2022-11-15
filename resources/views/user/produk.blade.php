@@ -31,7 +31,7 @@
             </div>
 
             <!-- PAGINATION -->
-            <div class="pagination justify-content-end">
+            <div class="pagination justify-content-end mt-4">
                 <li class="page-item previous-page disable">
                     <a class="page-link" href="#">Sebelumnya</a>
                 </li>

@@ -353,6 +353,10 @@ form button {
     border-radius: 0 !important;
 }
 
+.form-control {
+    border-radius: 0 !important;
+}
+
 .lokasi {
     width: 100%;
     height: auto;

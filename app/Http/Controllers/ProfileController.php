@@ -43,7 +43,7 @@ class ProfileController extends Controller
             "name_categories" => Category::select('id', 'name')->get()
         ];
         // dd($data['news']);
-        return view("user.profile", $data);
+        return view("user.detail-profile", $data);
     }
 
     /**
