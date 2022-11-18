@@ -18,10 +18,6 @@
                     <div class="carousel-caption d-none d-md-block">
                         <h5 class="text-white fw-bold">
                         </h5>
-                        <p class="text-white">
-                            Merupakan proyek dari Dinas Kelautan Kabupaten Batang.
-                            Dilaksanakan tanggal 10 September 2022 - 10 Oktober 2022
-                        </p>
                     </div>
                 </div>
                 <div class="carousel-item">
@@ -30,10 +26,6 @@
                     <div class="carousel-caption d-none d-md-block">
                         <h5 class="text-white fw-bold">
                         </h5>
-                        <p class="text-white">
-                            Merupakan proyek dari Dinas Kelautan Kabupaten Batang.
-                            Dilaksanakan tanggal 10 September 2022 - 10 Oktober 2022
-                        </p>
                     </div>
                 </div>
                 <div class="carousel-item">
@@ -42,10 +34,6 @@
                     <div class="carousel-caption d-none d-md-block">
                         <h5 class="text-white fw-bold">
                         </h5>
-                        <p class="text-white">
-                            Merupakan proyek dari Dinas Kelautan Kabupaten Batang.
-                            Dilaksanakan tanggal 10 September 2022 - 10 Oktober 2022
-                        </p>
                     </div>
                 </div>
             </div>

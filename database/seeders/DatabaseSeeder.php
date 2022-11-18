@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
         PhotoProduct::factory(20)->create();
         News::factory(10)->create();
         Service::factory(3)->create();
-        // Gallery::factory(30)->create();
+        Gallery::factory(30)->create();
         Testimonial::factory(5)->create();
 
         // \App\Models\User::factory()->create([
