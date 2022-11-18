@@ -56,17 +56,9 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle  {{ Request::is('product*') ? 'text-white' : '' }}"
-                            href="/product" data-bs-toggle="dropdown">
+                            href="/product">
                             Produk
                         </a>
-                        <ul class="dropdown-menu">
-                            @foreach ($name_categories as $name_category)
-                            <li>
-                                <a class="dropdown-item"
-                                    href="/product/{{ $name_category->id }}">{{ $name_category->name }}</a>
-                            </li>
-                            @endforeach
-                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ Request::is('news*') ? 'text-white' : '' }}" href="/news">
@@ -88,8 +80,8 @@
                 <div class="col-12 col-lg-4">
                     <h4 class="text-white fwmed">CV. Laksana Bahari</h4>
                     <h6 class="grey mt-3">
-                        Jl. Yos Sudarso Utara 28 Seturi - Batang Prov. Jawa Tengah Telp :
-                        0285-7910914 Email : {{ $profile->email }}
+                        {!! $profile->address !!} Telp :
+                        {{ $profile->phone_number }} Email : {{ $profile->email }}
                     </h6>
                 </div>
                 <div class="navigation col-12 col-lg-8 mt-lg-0 mt-4">

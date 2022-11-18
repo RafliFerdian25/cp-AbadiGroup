@@ -87,32 +87,6 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="latitude" class="col-sm-2 col-form-label">Garis Lintang</label>
-                            <div class="col-sm-10">
-                                <input required type="text" class="form-control @error('latitude')
-                                    is-invalid
-                                @enderror" id="latitude" name="latitude" value="{{ $profile->latitude }}">
-                                @error('latitude')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <label for="longitude" class="col-sm-2 col-form-label">Garis Bujur</label>
-                            <div class="col-sm-10">
-                                <input required type="text" class="form-control @error('longitude')
-                                    is-invalid
-                                @enderror" name="longitude" id="longitude" value="{{ $profile->longitude }}">
-                                @error('longitude')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="row mb-3">
                             <label for="phone_number" class="col-sm-2 col-form-label">No Telepon</label>
                             <div class="col-sm-10">
                                 <input required type="text" class="form-control @error('phone_number')

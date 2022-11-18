@@ -27,12 +27,12 @@ class ProductController extends Controller
         return view("admin.product", $data);
     }
 
-    public function userProduct(Category $category)
+    public function userProduct()
     {
         //
         $data = [
             "title" => "produk",
-            "products" => Product::where('category_id', $category->id)->get(),
+            "products" => Product::get(),
             "profile" =>  Profile::first(),
             "name_services"  => Service::select('name')->get(),
             "name_categories" => Category::select('id', 'name')->get(),
