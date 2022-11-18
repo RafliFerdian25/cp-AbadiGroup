@@ -111,8 +111,6 @@ class ProfileController extends Controller
             'mission' => 'required',
             'history' => 'required',
             'address' => 'required',
-            'latitude' => 'required',
-            'longitude' => 'required',
             'phone_number' => 'required',
             'email' => 'required',
         ]);
