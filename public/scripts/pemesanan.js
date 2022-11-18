@@ -6,6 +6,6 @@ function pemesanan() {
 
     let url = "https://wa.me/";
 
-    let end_url = `${url}${number}?text=nama: ${nama} %0Aemail: ${email} %0Apesan: ${pesan}`;
+    let end_url = `${url}${number}?text=Nama: ${nama} %0AEmail: ${email} %0APesan: ${pesan}`;
     window.open(end_url, "_blank");
 }
