@@ -3,10 +3,10 @@
 @section('content')
     <div class="wx mx-auto detail__produk pt60">
         <div class="navback d-flex align-items-center mb-3">
-            <a href="/product/{{ $product->category_id }}" class="text-decoration-none blue darkgrey me-3">
+            <a href="/product" class="text-decoration-none blue darkgrey me-3">
                 <i class="fa-solid fa-arrow-left-long"></i>
             </a>
-            <a href="/product/{{ $product->category_id }}" class="text-decoration-none blue">Produk</a>
+            <a href="/product" class="text-decoration-none blue">Produk</a>
             <span class="mx-2">/</span>
             <a href="" class="text-decoration-none darkgrey">Detail Produk</a>
         </div>

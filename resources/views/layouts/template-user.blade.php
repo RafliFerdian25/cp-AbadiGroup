@@ -28,7 +28,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bgdarkblue py-3">
         <div class="container-fluid">
-            <a class="navbar-brand text-white logo" href="#">CV. Laksana Bahari</a>
+            <a class="navbar-brand text-white logo" href="#">CV. Laksana Abadi</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -47,10 +47,10 @@
                         </a>
                         <ul class="dropdown-menu">
                             @foreach ($name_services as $name_service)
-                            <li>
-                                <a class="dropdown-item"
-                                    href="/service#layanan{{ $loop->iteration }}">{{ $name_service->name }}</a>
-                            </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="/service#layanan{{ $loop->iteration }}">{{ $name_service->name }}</a>
+                                </li>
                             @endforeach
                         </ul>
                     </li>
@@ -66,7 +66,7 @@
                         </a>
                     </li>
                 </ul>
-                <a class="btn__nav text-decoration-none" href="#contact">Hubungi Kami</a>
+                <a class="btn__nav text-decoration-none" href="/#contact">Hubungi Kami</a>
             </div>
         </div>
     </nav>
@@ -78,7 +78,7 @@
         <div class="wx mx-auto pt-5">
             <div class="row">
                 <div class="col-12 col-lg-4">
-                    <h4 class="text-white fwmed">CV. Laksana Bahari</h4>
+                    <h4 class="text-white fwmed">CV. Laksana Abadi</h4>
                     <h6 class="grey mt-3">
                         {!! $profile->address !!} Telp :
                         {{ $profile->phone_number }} Email : {{ $profile->email }}
@@ -90,10 +90,10 @@
                             <div class="item">
                                 <h5 class="text-white">Layanan</h5>
                                 @foreach ($name_services as $name_service)
-                                <div class="mt-lg-3 mt-2">
-                                    <a href="/service#layanan{{ $loop->iteration }}"
-                                        class="grey text-decoration-none">{{ $name_service->name }}</a>
-                                </div>
+                                    <div class="mt-lg-2 mt-2">
+                                        <a href="/service#layanan{{ $loop->iteration }}"
+                                            class="grey text-decoration-none">{{ $name_service->name }}</a>
+                                    </div>
                                 @endforeach
                             </div>
                         </div>
@@ -101,21 +101,18 @@
                             <div class="item">
                                 <h5 class="text-white">Produk</h5>
                                 @foreach ($name_categories as $name_category)
-                                <div class="mt-lg-3 mt-2">
-                                    <a href="/product#product{{ $loop->iteration }}"
-                                        class="grey text-decoration-none">{{ $name_category->name }}</a>
-                                </div>
+                                    <div class="mt-lg-2 mt-2">
+                                        <a href="/product#product{{ $loop->iteration }}"
+                                            class="grey text-decoration-none">{{ $name_category->name }}</a>
+                                    </div>
                                 @endforeach
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-4 col-6 mt-sm-0 mt-2">
                             <div class="item">
                                 <h5 class="text-white">Kegiatan</h5>
-                                <div class="mt-lg-3 mt-2">
-                                    <a href="/news" class="grey text-decoration-none">Dalam Perusahaan</a>
-                                </div>
-                                <div class="mt-1">
-                                    <a href="/news" class="grey text-decoration-none">Luar Perusahaan</a>
+                                <div class="mt-lg-2 mt-2">
+                                    <a href="/news" class="grey text-decoration-none">Kegiatan galangan</a>
                                 </div>
                             </div>
                         </div>
@@ -138,7 +135,7 @@
                 </div>
             </div>
             <div class="border-top py-3 text-white text-center">
-                Copyright {{ date('Y') }}. CV Satria Laksana Bahari.
+                Copyright {{ date('Y') }}. CV Laksana Abadi.
             </div>
         </div>
     </footer>

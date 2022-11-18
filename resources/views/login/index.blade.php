@@ -7,125 +7,86 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.98.0">
-    <title>Signin Laksana Abadi</title>
+    <title>Admin | CV Laksana Abadi</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sign-in/">
+    {{-- <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sign-in/"> --}}
 
-
-
-
-
-    <!-- CSS only -->
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <!-- Custom css -->
     <link rel="stylesheet" href="/css/style.css">
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous">
-    </script>
-
-    <style>
-    .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-    }
-
-    @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-            font-size: 3.5rem;
-        }
-    }
-
-    .b-example-divider {
-        height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
-        border: solid rgba(0, 0, 0, .15);
-        border-width: 1px 0;
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-    }
-
-    .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-    }
-
-    .bi {
-        vertical-align: -.125em;
-        fill: currentColor;
-    }
-
-    .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-    }
-
-    .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-    }
-    </style>
-
-
-    <!-- Custom styles for this template -->
     <link href="/css/admin-login.css" rel="stylesheet">
 </head>
 
-<body class="text-center" style="background-image: url({{ $image->regular }});background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;">
+<body>
+    <main class="form-signin">
+        <div class="image">
+            <img src="{{ $image->regular }}" alt="Gambar Halaman Masuk" width="100%" height="100%">
+        </div>
+        <div class="card__login w-75 position-absolute">
+            <form action="/login" method="POST">
+                @csrf
+                @if (session()->has('loginError'))
+                    <div class="alert alert-danger" role="alert">
+                        {{ session('loginError') }}
+                    </div>
+                @endif
+                <h3 class="text-center mb-4 fwmed">Selamat Datang!</h3>
 
-    <main class="form-signin w-100 m-auto">
-
-        <form action="/login" method="POST">
-            @csrf
-            <!-- <img class="mb-4" src="{{ $image->regular }}" alt="" width="72" height="57"> -->
-            @if (session()->has('loginError'))
-            <div class="alert alert-danger" role="alert">
-                {{ session('loginError') }}
-            </div>
-            @endif
-            <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-
-            <div class="form-floating">
-                <input type="text" name="username" class="form-control @error('username') is-invalid @enderror"
-                    id="username" placeholder="username" value="{{ old('username') }}" required>
-                <label for="username">username</label>
-                @error('username')
-                <div class="invalid-feedback">
-                    {{ $message }}
+                <div class="form-floating">
+                    <input type="text" name="username" class="form-control @error('username') is-invalid @enderror"
+                        id="username" placeholder="username" value="{{ old('username') }}" required>
+                    <label for="username">username</label>
+                    @error('username')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
-                @enderror
-            </div>
 
-            <div class="form-floating">
-                <input type="password" name="password" class="form-control" id="password" placeholder="Password"
-                    required>
-                <label for="password">Password</label>
-                @error('password')
-                <div class="invalid-feedback">
-                    {{ $message }}
+                <div class="position-relative mt-2">
+                    <div class="form-floating">
+                        <input type="password" name="password" class="form-control" id="password"
+                            placeholder="Password" required>
+                        <label for="password">Password</label>
+                        @error('password')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="eye-icon position-absolute" onclick="showPass()">
+                        <i class="fa-solid fa-eye" id="eye"></i>
+                    </div>
                 </div>
-                @enderror
-            </div>
-            <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-            <!-- <p class="mt-5 mb-3 text-muted">2022</p> -->
-        </form>
+                <button class="w-100 btn btn-lg btn-primary mt-3" type="submit">Masuk</button>
+                <!-- <p class="mt-5 mb-3 text-muted">2022</p> -->
+            </form>
+        </div>
     </main>
 
+    <!-- Fontawesome Icon -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
+        integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    {{-- Show hide password --}}
+    <script>
+        var state = false;
+        const input = document.getElementById("password");
 
+        function showPass() {
+            if (state) {
+                input.setAttribute("type", "password");
+                state = false;
+            } else {
+                input.setAttribute("type", "text");
+                state = true;
+            }
+        }
+    </script>
 </body>
 
 </html>

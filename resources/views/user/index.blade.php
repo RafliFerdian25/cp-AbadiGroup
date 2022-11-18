@@ -100,7 +100,7 @@
         </div>
         <div class="row ptbig">
             @foreach ($services as $service)
-                <div class="col-xl-4 col-sm-6 col-12">
+                <div class="col-xl-4 col-sm-6 col-12 mt-xl-0 mt-3">
                     <div class="content text-center">
                         <i class="fa-solid fa-ship blue"></i>
                         <h4 class="blue fw-bold mt-2">{{ $service->name }}</h4>
@@ -157,7 +157,7 @@
                     width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-            <div class="col-lg-6 col-12">
+            <div class="col-lg-6 col-12 mt-lg-0 mt-3">
                 {{-- <form> --}}
                 <div class="mb-3">
                     <label for="nama_lengkap" class="form-label">Nama Lengkap</label>

@@ -34,8 +34,7 @@
     <!-- Data table -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
 
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js">
-    </script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
 
     <!-- dropify -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/js/dropify.min.js"
@@ -60,7 +59,7 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
+                <div class="sidebar-brand-icon">
                     <i class="fa-sharp fa-solid fa-ship"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">Laksana Abadi Group</div>
@@ -69,13 +68,6 @@
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
-                <a class="nav-link" href="index.html">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span>
-                </a>
-            </li>
             <!-- Nav Item - Profile -->
             <li class="nav-item {{ Request::is('admin/profile*') ? 'active' : '' }}">
                 <a class="nav-link" href="/admin/profile">
@@ -165,7 +157,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website {{ date('Y') }}</span>
+                        <span>&copy Copyright {{ date('Y') }}. CV Laksana Abadi.</span>
                     </div>
                 </div>
             </footer>
