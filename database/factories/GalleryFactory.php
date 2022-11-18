@@ -19,7 +19,7 @@ class GalleryFactory extends Factory
     public function definition()
     {
         return [
-            'photo' => fake()->imageUrl(200,200),
+            'photo' => 'assets/news/b565LCMznGbjmFhapAj7yTvNjqTSeWVfIAgTQZzk.jpg',
             'news_id' => fake()->numberBetween(1, News::count()),
         ];
     }
