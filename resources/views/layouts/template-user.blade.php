@@ -112,10 +112,10 @@
                             <div class="item">
                                 <h5 class="text-white">Kegiatan</h5>
                                 <div class="mt-lg-3 mt-2">
-                                    <a href="" class="grey text-decoration-none">Dalam Perusahaan</a>
+                                    <a href="/news" class="grey text-decoration-none">Dalam Perusahaan</a>
                                 </div>
                                 <div class="mt-1">
-                                    <a href="" class="grey text-decoration-none">Luar Perusahaan</a>
+                                    <a href="/news" class="grey text-decoration-none">Luar Perusahaan</a>
                                 </div>
                             </div>
                         </div>
