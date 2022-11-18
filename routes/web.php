@@ -52,5 +52,4 @@ Route::get('/news/{id}', [NewsController::class, 'detailNews']);
 
 
 Route::get('/gallery', [GalleryController::class, 'index']);
-Route::get('/profile', [ProfileController::class, 'index']);
 Route::get('/testimonial', [ProfileController::class, 'index']);

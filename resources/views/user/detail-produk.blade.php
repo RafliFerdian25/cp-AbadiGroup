@@ -38,7 +38,7 @@
                         </div>
                     </div>
                     <div class="col-8 px-0" id="description__product">
-                        {!! $product->description !!}
+                        <h5>{!! $product->description !!}</h5>
                     </div>
                 </div>
                 <div class="row mb-2">

@@ -17,7 +17,6 @@
                     <img src="./img/carousel.jpg" class="d-block w-100" alt="Gambar Info Kapal" />
                     <div class="carousel-caption d-none d-md-block">
                         <h5 class="text-white fw-bold">
-                            Pembuatan Kapal Ikan Sumber Makmur
                         </h5>
                         <p class="text-white">
                             Merupakan proyek dari Dinas Kelautan Kabupaten Batang.
@@ -30,7 +29,6 @@
 
                     <div class="carousel-caption d-none d-md-block">
                         <h5 class="text-white fw-bold">
-                            Pembuatan Kapal Ikan Sumber Makmur
                         </h5>
                         <p class="text-white">
                             Merupakan proyek dari Dinas Kelautan Kabupaten Batang.
@@ -43,7 +41,6 @@
 
                     <div class="carousel-caption d-none d-md-block">
                         <h5 class="text-white fw-bold">
-                            Pembuatan Kapal Ikan Sumber Makmur
                         </h5>
                         <p class="text-white">
                             Merupakan proyek dari Dinas Kelautan Kabupaten Batang.
@@ -82,24 +79,24 @@
             <div class="experience col-lg-5 col-12 mt-lg-0 mt-4">
                 <div class="bgblue px-4 py-3">
                     <div class="item">
-                        <h5 class="fwmed">Total Pekerjaan</h5>
+                        <h5 class="fwmed">Total Proyek</h5>
                         <h1 class="fwbold mt-1">{{ $count_product }}+</h1>
                         <h5 class="mt-1">
-                            Telah berkerja sama dengan berbagai klien
+                            Telah menyelesaikan lebih dari {{ $count_product }} pekerjaan dengan berbagai klien
+                        </h5>
+                    </div>
+                    <div class="item mt-4">
+                        <h5 class="fwmed">Total Pekerja</h5>
+                        <h1 class="fwbold mt-1">200+</h1>
+                        <h5 class="mt-1">
+                            Lebih dari 200 orang bergabung bersama cv laksana abadi
                         </h5>
                     </div>
                     <div class="item mt-4">
                         <h5 class="fwmed">Pengalaman</h5>
-                        <h1 class="fwbold mt-1">5 Tahun</h1>
+                        <h1 class="fwbold mt-1">5+</h1>
                         <h5 class="mt-1">
                             Rata rata pekerja berpengalaman lebih dari 5 tahun
-                        </h5>
-                    </div>
-                    <div class="item mt-4">
-                        <h5 class="fwmed">Proyek Sekarang</h5>
-                        <h1 class="fwbold mt-1">10+</h1>
-                        <h5 class="mt-1">
-                            Pembuatan kapal ikan, kapal nelayan, dan lain lain
                         </h5>
                     </div>
                 </div>

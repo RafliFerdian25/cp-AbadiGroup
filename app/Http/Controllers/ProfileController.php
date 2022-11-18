@@ -42,7 +42,7 @@ class ProfileController extends Controller
             "name_services"  => Service::select('name')->get(),
             "name_categories" => Category::select('id', 'name')->get()
         ];
-        // dd($data['news']);
+        // dd($data);
         return view("user.detail-profile", $data);
     }
 
