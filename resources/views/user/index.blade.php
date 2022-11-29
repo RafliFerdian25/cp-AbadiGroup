@@ -14,14 +14,14 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="./img/carousel.jpg" class="d-block w-100" alt="Gambar Info Kapal" />
+                    <img src="./img/hero-image-fix-compressed.png" class="d-block w-100" alt="Gambar Info Kapal" />
                     <div class="carousel-caption d-none d-md-block">
                         <h5 class="text-white fw-bold">
                         </h5>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="./img/carousel.jpg" class="d-block w-100" alt="Gambar Info Kapal" />
+                    <img src="./img/hero-image-fix-compressed.png" class="d-block w-100" alt="Gambar Info Kapal" />
 
                     <div class="carousel-caption d-none d-md-block">
                         <h5 class="text-white fw-bold">
@@ -29,7 +29,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="./img/carousel.jpg" class="d-block w-100" alt="Gambar Info Kapal" />
+                    <img src="./img/hero-image-fix-compressed.png" class="d-block w-100" alt="Gambar Info Kapal" />
 
                     <div class="carousel-caption d-none d-md-block">
                         <h5 class="text-white fw-bold">
@@ -169,9 +169,13 @@
                 </div>
                 <div class="mb-3">
                     <label for="pesan" class="form-label">Pesan</label>
-                    <textarea class="form-control" id="pesan" rows="3"></textarea>
+                    <textarea class="form-control" id="pesan" placeholder="Tuliskan deskripsi pesan disini..." rows="3"></textarea>
                 </div>
-                <button type="submit" class="btn__blue w-100" onclick="pemesanan()">Submit</button>
+                <button type="submit" class="btn__blue btn__wa w-100" onclick="pemesanan()">
+                    <div class="d-flex align-items-center justify-content-center">
+                        <i class="fa-brands fa-whatsapp me-2"></i>Kirim ke Whatsapp
+                    </div>
+                </button>
                 {{-- </form> --}}
             </div>
         </div>

@@ -80,8 +80,14 @@
                 <div class="col-12 col-lg-4">
                     <h4 class="text-white fwmed">CV. Laksana Abadi</h4>
                     <h6 class="grey mt-3">
-                        {!! $profile->address !!} Telp :
-                        {{ $profile->phone_number }} Email : {{ $profile->email }}
+                        {!! $profile->address !!}
+                    </h6>
+                    <h6 class="grey">
+                        Telp :
+                        {{ $profile->phone_number }}
+                    </h6>
+                    <h6 class="grey">
+                        Email : {{ $profile->email }}
                     </h6>
                 </div>
                 <div class="navigation col-12 col-lg-8 mt-lg-0 mt-4">

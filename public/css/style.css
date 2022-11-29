@@ -165,6 +165,22 @@ h6 {
     background-color: rgb(255, 255, 255, .85);
 }
 
+.btn__wa {
+    background-color: #128C7E !important;
+}
+
+.btn__wa div,
+.btn__wa path {
+    color: white !important;
+}
+
+.btn__wa:hover {
+    background-color: #075E54 !important;
+    color: white;
+    font-weight: 600;
+    transition: .3s;
+}
+
 /* Navbar */
 nav .logo {
     font-size: 16px;
@@ -216,7 +232,8 @@ nav span path {
 /* Carousel */
 .carousel__section img {
     max-height: calc(100vh - 72px);
-    filter: brightness(70%);
+    filter: brightness(50%);
+    object-fit: fill;
 }
 
 .carousel__section .carousel-control-next-icon,
@@ -391,9 +408,15 @@ footer .navigation a:hover {
     color: white;
 }
 
-footer .wx > .row h6 {
+footer .wx>.row h6 {
     line-height: 1.75rem;
 }
+
+footer p {
+    color: rgb(255, 255, 255, .5);
+    margin-bottom: 0;
+}
+
 /* Detail profil */
 
 
