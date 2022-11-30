@@ -16,8 +16,8 @@
                 @foreach ($products as $product)
                     <div class="card p-3">
                         <div class="card-image">
-                            {{-- <img src="{{ asset('storage/' . $product->PhotoProduct[0]->photo) }}" alt="Gambar Kapal"
-                                id="gambar1" /> --}}
+                            <img src="{{ asset('storage/' . $product->PhotoProduct[0]->photo) }}" alt="Gambar Kapal"
+                                id="gambar1" />
                         </div>
                         <div class="card-info">
                             <h5 class="blue mt-2 fwbold text-center">{{ $product->name }}</h5>
