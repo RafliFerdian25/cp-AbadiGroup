@@ -197,7 +197,7 @@ $(function () {
     var numberOfItems = $(".card-content .card").length;
     var limitPerPage = 6; //No. of cards to show per page
     var totalPages = Math.ceil(numberOfItems / limitPerPage);
-    var paginationSize = 3; //pagination items to show
+    var paginationSize = 6; //pagination items to show
     var currentPage;
 
     function showPage(whichPage) {

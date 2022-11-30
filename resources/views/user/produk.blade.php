@@ -16,8 +16,8 @@
                 @foreach ($products as $product)
                     <div class="card p-3">
                         <div class="card-image">
-                            <img src="{{ asset('storage/' . $product->PhotoProduct[0]->photo) }}" alt="Gambar Kapal"
-                                id="gambar1" />
+                            {{-- <img src="{{ asset('storage/' . $product->PhotoProduct[0]->photo) }}" alt="Gambar Kapal"
+                                id="gambar1" /> --}}
                         </div>
                         <div class="card-info">
                             <h5 class="blue mt-2 fwbold text-center">{{ $product->name }}</h5>
@@ -31,8 +31,8 @@
             </div>
 
             <!-- PAGINATION -->
-            <div class="pagination justify-content-end mt-4">
-                <li class="page-item previous-page disable">
+            <div class="pagination justify-content-center flex-wrap mt-4" id="page__pagination">
+                {{-- <li class="page-item previous-page disable">
                     <a class="page-link" href="#">Sebelumnya</a>
                 </li>
                 <li class="page-item current-page active">
@@ -55,7 +55,7 @@
                 </li>
                 <li class="page-item next-page">
                     <a class="page-link" href="#"><i class="fa-solid fa-angle-left"></i></a>
-                </li>
+                </li> --}}
             </div>
         </div>
     </div>
