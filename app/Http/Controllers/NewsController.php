@@ -65,7 +65,10 @@ class NewsController extends Controller
     public function create()
     {
         //
-        return view("admin.news-create");
+        $data = [
+            "title" => "Menambahkan kegiatan",
+        ];
+        return view("admin.news-create", $data);
     }
 
     /**

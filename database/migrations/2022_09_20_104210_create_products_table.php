@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name', 100);
             $table->text('description');
-            $table->integer('price');
+            $table->bigInteger('price');
             $table->float('length')->nullable();
             $table->float('breadth')->nullable();
             $table->float('depth')->nullable();
